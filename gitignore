@@ -1,0 +1,52 @@
+# === Data (too large for Git) ===
+data/raw/
+data/processed/
+*.csv
+*.parquet
+*.jsonl
+*.json.gz
+*.arrow
+
+# Keep sample files
+!data/samples/
+
+# === Model Weights ===
+*.bin
+*.pt
+*.pth
+*.safetensors
+models/
+checkpoints/
+
+# === Notebooks ===
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
+# === Python ===
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+.env
+venv/
+env/
+.venv/
+
+# === Colab / Jupyter ===
+*.nbconvert.ipynb
+
+# === OS ===
+.DS_Store
+Thumbs.db
+
+# === IDE ===
+.vscode/
+.idea/
+
+# === Logs / Output ===
+logs/
+runs/
+wandb/
+*.log

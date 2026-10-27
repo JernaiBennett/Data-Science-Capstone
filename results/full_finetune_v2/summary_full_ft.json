@@ -1,0 +1,34 @@
+{
+  "model": "Salesforce/codet5p-220m",
+  "method": "full_fine_tune",
+  "hyperparameters": {
+    "learning_rate": 5e-05,
+    "epochs": 3,
+    "effective_batch_size": 32,
+    "warmup_ratio": 0.05,
+    "weight_decay": 0.01,
+    "max_source_len": 512,
+    "max_target_len": 128,
+    "bf16": true,
+    "seed": 42
+  },
+  "generation": {
+    "num_beams": 4,
+    "max_new_tokens": 128
+  },
+  "efficiency": {
+    "total_params": 222882048,
+    "trainable_params": 222882048,
+    "trainable_pct": 100.0,
+    "epoch_times_sec": [
+      1669.7,
+      1655.4,
+      1656.4
+    ],
+    "total_train_time_min": 120.4,
+    "peak_gpu_mem_gb": 12.68,
+    "generation_ms_per_example": 97.4
+  },
+  "best_eval_loss": 1.722754716873169,
+  "best_checkpoint": "/content/drive/MyDrive/capstone/runs/codet5p_220m_full_ft_v2/checkpoint-14991"
+}

@@ -1,0 +1,9 @@
+group,variant,n,BLEU-4,ROUGE-L,METEOR
+ALL,as_stored,19988,16.4,39.89,37.54
+gitbugs,as_stored,973,15.11,29.31,25.76
+go,as_stored,3397,24.97,51.58,49.08
+java,as_stored,4458,17.87,40.4,38.71
+javascript,as_stored,1188,7.46,26.7,25.31
+php,as_stored,5092,17.49,47.85,45.67
+python,as_stored,4355,9.63,28.07,24.9
+ruby,as_stored,525,17.36,30.56,28.25

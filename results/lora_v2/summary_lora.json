@@ -1,0 +1,46 @@
+{
+  "model": "Salesforce/codet5p-220m",
+  "method": "lora",
+  "lora": {
+    "r": 8,
+    "alpha": 32,
+    "dropout": 0.1,
+    "target_modules": [
+      "q",
+      "v"
+    ]
+  },
+  "hyperparameters": {
+    "learning_rate": 0.0003,
+    "epochs": 3,
+    "effective_batch_size": 32,
+    "warmup_ratio": 0.05,
+    "weight_decay": 0.01,
+    "max_source_len": 512,
+    "max_target_len": 128,
+    "bf16": true,
+    "seed": 42
+  },
+  "generation": {
+    "num_beams": 4,
+    "max_new_tokens": 128
+  },
+  "efficiency": {
+    "total_params": 223766784,
+    "trainable_params": 884736,
+    "trainable_pct": 0.395,
+    "adapter_size_mb": 3.6,
+    "epoch_times_sec": [
+      1731.6,
+      1743.0,
+      1738.7
+    ],
+    "total_train_time_min": 174.5,
+    "peak_gpu_mem_gb": 7.93,
+    "generation_ms_per_example_merged": 90.5,
+    "generation_ms_per_example_adapters_attached": 113.6
+  },
+  "best_eval_loss": 1.855194330215454,
+  "best_checkpoint": "/content/drive/MyDrive/capstone/runs/codet5p_220m_lora/checkpoint-14991",
+  "gpu": "NVIDIA A100-SXM4-40GB"
+}

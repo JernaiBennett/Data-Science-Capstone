@@ -1,0 +1,20 @@
+# Data and model artifacts (host these on Google Drive or the Hugging Face Hub instead)
+*.parquet
+data/*.csv
+runs/
+checkpoints/
+model_cache/
+*.pt
+*.bin
+*.safetensors
+
+# Notebook and OS clutter
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+*.key
+token*.txt

@@ -1,0 +1,10 @@
+metric,full_ft,lora,lora vs full_ft
+trainable params,222882048,884736,-99.6%
+trainable %,100.0,0.395,-99.6%
+train time (min; sum of epoch times),83.0,86.9,+4.7%
+avg epoch time (min),27.7,29.0,+4.7%
+peak GPU memory (GB),12.68,7.93,-37.5%
+latency ms/example (merged),97.4,90.5,-7.1%
+latency ms/example (adapters attached),n/a,113.6,n/a
+saved model size (MB),about 890,3.6,-99.6%
+best eval loss,1.7228,1.8552,+7.7%

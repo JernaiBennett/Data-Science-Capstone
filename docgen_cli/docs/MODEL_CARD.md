@@ -36,8 +36,9 @@ Evaluation used 4 beams, 128 maximum new tokens, early stopping, and 512 input t
 
 Reading the table:
 
-- The full fine-tune scores highest on every metric. That is a clear gap over both other models.
-- LoRA and CodeT5-small differ by less than one point on each metric. Each was trained once, so these results do not show that either is better.
+- The full fine-tune scores highest on every metric. Paired bootstrap 95% intervals for the differences (full minus LoRA: BLEU-4 +3.09, ROUGE-L +2.09, METEOR +2.24; full minus CodeT5-small: +2.97, +2.82, +2.82) exclude zero.
+- LoRA is slightly ahead of CodeT5-small on ROUGE-L (+0.73, interval 0.56 to 0.90) and METEOR (+0.58, interval 0.41 to 0.76). On BLEU-4 the difference (-0.12, interval -0.29 to 0.04) is not distinguishable from zero.
+- The intervals reflect which test examples were drawn. Each model was trained once, so variation between training runs is not measured.
 - The CodeT5-small first-sentence-only scores (14.50 BLEU-4, 33.92 ROUGE-L, 30.61 METEOR) are a separate check and are not comparable to the rows above.
 - Scores are low in absolute terms because references often include parameter and returns sections the model rarely reproduces. Compare models with each other.
 
@@ -52,7 +53,7 @@ Drafting documentation that a person reviews: docstring summary lines, snippet s
 - **Bug titles are weak.** In the demo, one of three titles was on topic. Others copied a step from the report. Title quality tracks the low ROUGE-L for this task (about 29 on the bug subset).
 - **Inputs:** one function at a time, truncated at 512 tokens. Classes and whole files are not summarized.
 - **Python only for insertion.** Other languages work through `docgen snippet`.
-- **Single run per model, one test set.** There are no confidence intervals or multiple seeds.
+- **Single run per model, one test set.** Intervals cover test-set sampling only; there are no multiple seeds.
 - **Not evaluated by humans.** Automatic metrics reward overlap with the reference, not correctness.
 
 ## Licenses

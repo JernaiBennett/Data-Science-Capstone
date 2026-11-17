@@ -21,8 +21,23 @@ Test set: 19,988 examples (six programming languages plus GitBugs). Higher is be
 
 - Full fine-tuning scores highest on every metric and in every language group; LoRA is within about 2 ROUGE-L points while using 37.5% less peak GPU memory.
 - Training time per epoch is nearly the same (27.7 vs 29.0 minutes). Once merged into the base model, LoRA inference speed matches the full fine-tune.
-- LoRA and CodeT5-small differ by less than one point on each metric. With one training run each, this does not show that either is better.
+- Paired bootstrap intervals (below) show the full fine-tune is ahead of both other models on every metric. LoRA is slightly ahead of CodeT5-small on ROUGE-L and METEOR (about 0.6 to 0.7 points) and level on BLEU-4. The intervals reflect test-set sampling only; each model was trained once, so training-seed variation is not measured.
 - Per-language scores, first-sentence scores, and the efficiency table are in `results/comparisons/`.
+
+## Statistical comparison
+
+95% intervals from a paired bootstrap over the 19,988 test examples (2,000 resamples, seed 42; the same resampled examples are used for every model). Produced by `scripts/final_evaluation.py`; tables and examples are in `results/final_comparison/`.
+
+| Comparison | BLEU-4 | ROUGE-L | METEOR |
+|---|---|---|---|
+| Full fine-tune minus LoRA | +3.09 (2.86 to 3.32) | +2.09 (1.90 to 2.28) | +2.24 (2.05 to 2.44) |
+| Full fine-tune minus CodeT5-small | +2.97 (2.76 to 3.18) | +2.82 (2.62 to 3.03) | +2.82 (2.63 to 3.03) |
+| LoRA minus CodeT5-small | -0.12 (-0.29 to 0.04) | +0.73 (0.56 to 0.90) | +0.58 (0.41 to 0.76) |
+
+- The full fine-tune beats both models on every metric; no interval comes near zero.
+- LoRA beats CodeT5-small on ROUGE-L and METEOR by a small margin; on BLEU-4 the difference is not distinguishable from zero.
+- The full fine-tune scores higher than LoRA on 40.6% of examples, ties on 27.7%, and scores lower on the rest.
+- These intervals cover which test examples were drawn. They do not cover run-to-run variation from training, because each model was trained once.
 
 ## Key finding: a data leak, found and fixed
 
@@ -75,11 +90,11 @@ print({m.__name__: m.__version__ for m in (torch, transformers, datasets, peft, 
 
 ## Limitations and next steps
 
-- One training run per model (a single seed); LoRA settings are not tuned yet.
+- One training run per model (a single seed), so the intervals above do not include training variation; LoRA settings are not tuned yet.
 - Reference docstrings include parameter and returns sections, which lowers n-gram scores for every model.
 - The Spring 2026 CodeT5-small baseline was trained on Python only and likely on leaked data. It was replaced by a retrain on the fixed splits (`05_codet5_small_baseline.ipynb`).
 - The CLI is a prototype. Parameter and returns text in generated docstrings is often generic or wrong, so it keeps only the summary line by default. Bug titles and non-Python snippet summaries are weak. See `docgen_cli/docs/MODEL_CARD.md`.
-- Next: error analysis across all three models, confidence intervals, and an optional LoRA sweep.
+- Next: written error analysis from `results/final_comparison/` and an optional LoRA sweep.
 
 ## References
 

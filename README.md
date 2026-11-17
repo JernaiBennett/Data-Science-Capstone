@@ -22,7 +22,7 @@ Test set: 19,988 examples (six programming languages plus GitBugs). Higher is be
 - Full fine-tuning scores highest on every metric and in every language group; LoRA is within about 2 ROUGE-L points while using 37.5% less peak GPU memory.
 - Training time per epoch is nearly the same (27.7 vs 29.0 minutes). Once merged into the base model, LoRA inference speed matches the full fine-tune.
 - Paired bootstrap intervals (below) show the full fine-tune is ahead of both other models on every metric. LoRA is slightly ahead of CodeT5-small on ROUGE-L and METEOR (about 0.6 to 0.7 points) and level on BLEU-4. The intervals reflect test-set sampling only; each model was trained once, so training-seed variation is not measured.
-- Per-language scores, first-sentence scores, and the efficiency table are in `results/comparisons/`.
+- Per-language and first-sentence scores are in each run's `metrics_*.csv`, and the full fine-tune vs LoRA efficiency table is in `results/comparisons/`. Three-model scores and intervals are in `results/final_comparison/`.
 
 ## Statistical comparison
 
@@ -42,7 +42,7 @@ Test set: 19,988 examples (six programming languages plus GitBugs). Higher is be
 
 ## Key finding: a data leak, found and fixed
 
-In CodeSearchNet's Python subset the function code includes its own docstring, which is also the target. The first full fine-tune therefore learned to copy the answer from the input (98.6% of Python test inputs contained the target; Python reached 72.6 BLEU-4 and 96.6 ROUGE-L). Docstrings were stripped from Python inputs with the `ast` module, 122 rows that still leaked were dropped, and everything was retrained on the fixed splits (Python fell to a realistic 9.6 BLEU-4 and 28.1 ROUGE-L). The leaked run is kept in `results/full_finetune_v1_leaked/` as documentation. All reported results use the fixed data.
+In CodeSearchNet's Python subset the function code includes its own docstring, which is also the target. The first full fine-tune therefore learned to copy the answer from the input (98.6% of Python test inputs contained the target; Python reached 72.6 BLEU-4 and 96.6 ROUGE-L). Docstrings were stripped from Python inputs with the `ast` module, 122 rows that still leaked were dropped, and everything was retrained on the fixed splits (Python fell to a realistic 9.6 BLEU-4 and 28.1 ROUGE-L). The leaked run's outputs are not included in this repository. All reported results use the fixed data.
 
 ## Repository structure
 
@@ -54,13 +54,16 @@ notebooks/
   04_lora_finetune.ipynb             CodeT5+ 220M LoRA, evaluation, comparison with full fine-tune
   05_codet5_small_baseline.ipynb     CodeT5-small on the fixed splits, matched evaluation, three-model comparison
 results/
-  full_finetune_v1_leaked/           First run (leaked data), kept for the record
-  full_finetune_v2/                  Full fine-tune on the fixed data
-  lora_v2/                           LoRA on the fixed data
-  comparisons/                       Side-by-side metrics and efficiency tables
+  full_finetune_v2/                  Full fine-tune on the fixed data: metrics, predictions, loss curves, summary
+  lora_v2/                           LoRA on the fixed data: metrics, predictions, loss curves, summary
+  codet5_small_v2/                   CodeT5-small predictions on the fixed data
+  comparisons/                       Full fine-tune vs LoRA metrics and efficiency tables
+  final_comparison/                  Three-model scores, bootstrap confidence intervals, error-analysis tables and examples
+scripts/
+  final_evaluation.py                Builds results/final_comparison/ from the three prediction files
 docgen_cli/                          The `docgen` command-line tool, tests, demo project, and model card
-docs/                                Presentation and loss-curve figures
-data/                                Data description (datasets are not stored in the repository)
+docs/
+  ERROR_ANALYSIS.md                  Output shape, input length, and bug-report error analysis
 ```
 
 Prediction files are gzipped (`.csv.gz`); read them with `pandas.read_csv("file.csv.gz")`.
@@ -73,8 +76,9 @@ Prediction files are gzipped (`.csv.gz`); read them with `pandas.read_csv("file.
 4. Run `03_full_finetune.ipynb` on an A100 runtime (about 2 hours; checkpoints resume automatically).
 5. Run `04_lora_finetune.ipynb` on the same GPU type (about 1.5 hours of training plus generation).
 6. Run `05_codet5_small_baseline.ipynb` (about 40 minutes of training plus generation). It also rescores the full fine-tune and LoRA predictions with the same code and prints the three-model tables.
+7. Run `scripts/final_evaluation.py` on the three prediction files (no GPU needed) to rebuild `results/final_comparison/`. The command is in the script's header.
 
-Run each notebook from top to bottom in a single session. See `data/README.md` for the files each step creates.
+Run each notebook from top to bottom in a single session. Datasets and model checkpoints are not stored in this repository.
 
 ### Shared settings
 
@@ -95,7 +99,7 @@ print({m.__name__: m.__version__ for m in (torch, transformers, datasets, peft, 
 - Reference docstrings include parameter and returns sections, which lowers n-gram scores for every model.
 - The Spring 2026 CodeT5-small baseline was trained on Python only and likely on leaked data. It was replaced by a retrain on the fixed splits (`05_codet5_small_baseline.ipynb`).
 - The CLI is a prototype. Parameter and returns text in generated docstrings is often generic or wrong, so it keeps only the summary line by default. Bug titles and non-Python snippet summaries are weak. See `docgen_cli/docs/MODEL_CARD.md`.
-- Next: written error analysis from `results/final_comparison/` and an optional LoRA sweep.
+- Next: human rating of a labeled sample of outputs and an optional LoRA sweep.
 
 ## References
 

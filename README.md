@@ -37,6 +37,7 @@ Test set: 19,988 examples (six programming languages plus GitBugs). Higher is be
 - The full fine-tune beats both models on every metric; no interval comes near zero.
 - LoRA beats CodeT5-small on ROUGE-L and METEOR by a small margin; on BLEU-4 the difference is not distinguishable from zero.
 - The full fine-tune scores higher than LoRA on 40.6% of examples, ties on 27.7%, and scores lower on the rest.
+- Output-shape, input-length, and bug-report error analysis is in [docs/ERROR_ANALYSIS.md](docs/ERROR_ANALYSIS.md).
 - These intervals cover which test examples were drawn. They do not cover run-to-run variation from training, because each model was trained once.
 
 ## Key finding: a data leak, found and fixed

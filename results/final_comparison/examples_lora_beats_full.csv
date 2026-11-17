@@ -1,0 +1,498 @@
+group,source,reference,full,lora,small,rouge_full,rouge_lora,rouge_small,gap_full_minus_lora,gap_full_minus_small
+gitbugs,"Issue Type: <b>Bug</b>
+
+1. Bring up code-insiders
+2. In the extension viewlet, choose 'Disable All Installed Extensions' from the drop down menu.
+3. Reload the window
+
+-> The built-in git extension is disabled. It's the only built-in extension that's disabled. It only happens on mac. I could not reproduce it on Windows.
+
+-> It only happens through the context menu. When I launch with `code-insiders --disable-extensions` the git extension remains enabled.
+
+VS Code version: Code - Inside ...",Built-in git extension disabled,Disable All Installed Extensions does not work on mac,The built-in git extension is disabled,Disable All Installed Extensions from the drop down menu,0.0,83.3,0.0,-83.3,0.0
+go,"func (c *FakeComponentStatuses) Delete(name string, options *v1.DeleteOptions) error {
+	_, err := c.Fake.
+		Invokes(testing.NewRootDeleteAction(componentstatusesResource, name), &corev1.ComponentStatus{})
+	return err
+}",// Delete takes name of the componentStatus and deletes it. Returns an error if one occurs.,// Delete deletes a componentStatus.,// Delete takes name of the componentStatus and deletes it. Returns an error if one occurs.,// Delete takes name of the componentStatus and deletes it. Returns an error if there is any.,21.1,100.0,83.9,-78.9,-62.800000000000004
+go,"func (d *CompoundFileDirectory) FileLength(name string) (n int64, err error) {
+	panic(""not implemented yet"")
+}",// Returns the length of a file in the directory.,// FileLength is not implemented yet.,// FileLength returns the length of a file in bytes.,// FileLength returns the length of the file in bytes.,0.0,77.8,66.7,-77.8,-66.7
+java,"@Override
+    public SortedSet<String> getNames() {
+        return Collections.unmodifiableSortedSet(new TreeSet<String>(metrics.keySet()));
+    }","Returns a set of the names of all the metrics in the registry.
+
+@return the names of all the metrics","/*
+(non-Javadoc)
+
+@see org.jboss.shrinkwrap.api.container.Container#getNames()","Returns the names of the metrics.
+
+@return the names of the metrics","Returns the names of the metrics.
+
+@return the names of the metrics.",0.0,75.0,75.0,-75.0,-75.0
+go,"func (p *Projection) PredicatePushDown(predicates []expression.Expression) (ret []expression.Expression, retPlan LogicalPlan, err error) {
+	retPlan = p
+	var push []expression.Expression
+	for _, cond := range predicates {
+		canSubstitute := true
+		extractedCols := expression.ExtractColumns(cond)
+		for _, col := range extractedCols {
+			id := p.GetSchema().GetColumnIndex(col)
+			if _, ok := p.Exprs[id].(*expression.ScalarFunction); ok {
+				canSubstitute = false
+				break
+			}
+		}
+		if canSubstitu ...",// PredicatePushDown implements LogicalPlan PredicatePushDown interface.,// PredicatePushDown performs a push down operation on the projection.,// PredicatePushDown implements LogicalPlan.PredicatePushDown.,// PredicatePushDown adds a PredicatePushDown to the given predicates.,14.3,88.9,30.8,-74.60000000000001,-16.5
+java,"public void setOverflow() {
+        isOverflow = true;
+        if (com.ibm.ejs.ras.TraceComponent.isAnyTracingEnabled() && LoggingUtil.SESSION_LOGGER_CORE.isLoggable(Level.FINE)) {
+            LoggingUtil.SESSION_LOGGER_CORE.logp(Level.FINE, methodClassName, ""setOverflow"", appNameAndIdString);
+        }
+    }","/*
+(non-Javadoc)
+
+@see com.ibm.wsspi.session.ISession#setOverflow()","/*
+Set the overflow flag.","/* (non-Javadoc)
+@see com.ibm.ejs.ras.Session#setOverflow(boolean)","/*
+(non-Javadoc)
+
+@see com.ibm.wsspi.session.Session#setOverflow()",0.0,73.7,88.9,-73.7,-88.9
+java,"public void computeSpecificity(CombinedSelector.Specificity spec) {   	
+		for(SelectorPart item: list) {
+			item.computeSpecificity(spec);
+		}
+    }",Computes specificity of this selector,"/* (non-Javadoc)
+@see net.jawr.web.resource.bundle.selector.CombinedSelector#computeSpecificity(net.jawr.web.resource.bundle.selector.Specificity)","Computes the specificity of this selector.
+
+@param spec","Compute the specificity of the selector.
+
+@param spec the selector to compute the specificity",8.7,76.9,31.6,-68.2,-22.900000000000002
+php,"public function init()
+    {
+        parent::init();
+        if (isset($this->attrs->version)) {
+            $this->version = $this->attrs->version;
+        }
+        $this->header('Cache-Control: max-age=31536000, public, pre-check=0, post-check=0');
+        $this->header('Expires: ' . date('r', strtotime('+1 year')));
+        $html = '<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv=""X-UA-Compatible"" content=""IE=edge"" />
+	<meta http-equiv=""Content-Type"" content=""text/html; charset=UTF-8"" />
+	<s ...","Constructor
+@return void",Initialize the client.,"init
+
+@return void","Initialize the browser.
+
+@return void",0.0,66.7,50.0,-66.7,-50.0
+go,"func (c *awsCloudImplementation) DeleteInstance(i *cloudinstances.CloudInstanceGroupMember) error {
+	if c.spotinst != nil {
+		return spotinst.DeleteInstance(c.spotinst, i)
+	}
+
+	return deleteInstance(c, i)
+}",// DeleteInstance deletes an aws instance,// DeleteInstance implements cloudinstances.CloudImplementation,// DeleteInstance deletes an instance.,// DeleteInstance deletes an instance,22.2,88.9,88.9,-66.7,-66.7
+java,"public int ENgetnodeindex( String id ) throws EpanetException {
+        int[] index = new int[1];
+        int error = epanet.ENgetnodeindex(id, index);
+        checkError(error);
+        return index[0];
+    }","Retrieves the index of a node with a specified ID.
+
+@param id the node id.
+@return the node index.
+@throws EpanetException","/* (non-Javadoc)
+@see org.restcomm.protocols.ss7.isup.ISUPProtocol#ENgetnodeindex(java.lang.String)","Returns the index of the node with the given id.
+
+@param id the node id
+@return the index of the node with the given id
+@throws EpanetException","Returns the index of an Epanet node.
+
+@param id the Epanet node id
+@return the index of an Epanet node
+@throws EpanetException if an Epanet error occurs",0.0,66.7,58.3,-66.7,-58.3
+java,"@Override
+    public <T> WriteResult delete(final T entity, final DeleteOptions options) {
+        final T wrapped = ProxyHelper.unwrap(entity);
+        if (wrapped instanceof Class<?>) {
+            throw new MappingException(""Did you mean to delete all documents? -- delete(ds.createQuery(???.class))"");
+        }
+        try {
+            return delete(wrapped.getClass(), mapper.getId(wrapped), options);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }","Deletes the given entity (by @Id), with the WriteConcern
+
+@param entity  the entity to delete
+@param options the options to use when deleting
+@return results of the delete","/*
+(non-Javadoc)
+
+@see com.impetus.kundera.client.Client#delete(java.lang.Object, com.impetus.kundera.client.DeleteOptions)","Deletes the given entity.
+
+@param entity the entity to delete
+@param options the options
+@return the result","/*
+(non-Javadoc)
+
+@see
+com.ibm.ws.sib.processor.impl.WriteResult#delete(com.ibm.ws.sib.processor.impl.Entity,
+com.ibm.ws.sib.processor.impl.DeleteOptions)",4.4,71.1,3.8,-66.69999999999999,0.6000000000000005
+gitbugs,"Hi Team,
+
+ 
+
+Please help to suggest how to fix the issue as our Cassandra DB is misbehaving.
+
+ 
+
+There is a total of 8 Node clusters of Cassandra out of which 2 nodes are misbehaving and getting down over and again. while checking ./nodetool status two nodes always get down within 1 or 2 days.
+
+And we have noticed that Cassandra's services also not running on these two faulty nodes.
+
+Logs:
+
+ERROR [CompactionExecutor:9433] 2022-06-02 16:32:29,997 CassandraDaemon.java:228 - Exception ...",Cassandra ||system logs|| Unable to compute ceiling for max when histogram overflowed,Cassandra DB is misbehaving,CompactionExecutor:9433 - Unable to compute ceiling for max when histogram overflowed,Cassandra DB is misbehaving and getting down over and again,12.5,78.3,9.1,-65.8,3.4000000000000004
+go,"func validatePhysicalHostForCreation(h *crimson.PhysicalHost) error {
+	switch {
+	case h == nil:
+		return status.Error(codes.InvalidArgument, ""physical host specification is required"")
+	case h.Name == """":
+		return status.Error(codes.InvalidArgument, ""hostname is required and must be non-empty"")
+	case h.Vlan != 0:
+		return status.Error(codes.InvalidArgument, ""VLAN must not be specified, use IP address instead"")
+	case h.Machine == """":
+		return status.Error(codes.InvalidArgument, ""machine is require ...",// validatePhysicalHostForCreation validates a physical host for creation.,"// validatePhysicalHostForCreation checks if the given physical host specification
+// is valid.",// validatePhysicalHostForCreation validates a physical host for creation.,// validatePhysicalHostForCreation validates the physical host for creation,35.3,100.0,85.7,-64.7,-50.400000000000006
+php,"protected function set_items() {
+		$category_name = single_cat_title( '', false );
+		$category_id   = get_cat_ID( $category_name );
+		$this->set_ancestors( $category_id, 'category' );
+		$this->set( $this->get_the_archive_title() );
+	}","Sets breadcrumbs items
+
+@return void","Set items.
+
+@since  1.0.0
+@access protected","Sets the items.
+
+@return void","Set the items of the category.
+
+@return void",15.4,80.0,46.2,-64.6,-30.800000000000004
+go,"func (c *Context) BindTexture(target int, texture *js.Object) {
+	c.Call(""bindTexture"", target, texture)
+}",// Binds a named texture object to a target.,"// BindTexture binds a texture to the given target.
+//
+// The texture is bound to the current context.
+//
+// If the texture is already bound to the current context, the texture is
+// replaced.
+//
+// If the texture is not bound to the current context, a new texture is
+// created.
+//
+// If the texture is not bound to the current context, a new texture is
+// created and bound to the current context.
+//
+// If the texture is not bound to the current context, a new texture is
+// created and bound to t ...",// BindTexture binds a texture to a given target.,// BindTexture binds a texture to the specified target.,10.5,75.0,62.5,-64.5,-52.0
+java,"@Override
+    @Synchronized
+    public void addListener(ClusterListener listener) {
+        Preconditions.checkNotNull(listener, ""listener"");
+        if (!cache.isPresent()) {
+            initializeCache();
+        }
+        cache.get().getListenable().addListener(pathChildrenCacheListener(listener));
+    }","Add Listener to the cluster.
+
+@param listener Cluster event Listener.","/*
+(non-Javadoc)
+
+@see
+com.impetus.kundera.client.Client#addListener(com.impetus
+.kundera.client.ClusterListener)","Adds a listener to the cluster.
+
+@param listener the listener to add","/*
+(non-Javadoc)
+
+@see com.ibm.wsspi.cluster.cluster.ClusterListener#addListener(com.ibm.wsspi.cluster.cluster.ClusterListener)",0.0,63.6,15.4,-63.6,-15.4
+gitbugs,"User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.11; rv:72.0) Gecko/20100101 Firefox/72.0
+
+Steps to reproduce:
+
+After upgrade to 68.4.1 on Mac tried to send email through Office 365. Outgoing server settings: smtp.office365.com, Port 587, correct user name, Authentication method: Normal Password, STARTTLS. This has worked until this upgrade.
+
+
+Actual results:
+
+""Login to account ""Microsoft Live Hotmail"" failed. Login to server smtp.office365.com with username xxx failed. Enter New Password,  ...",Can't send email through Office 365 account,"""Login to account ""Microsoft Live Hotmail"" failed. Login to server smtp.office365.com with username xxx failed. Enter New Password, Cancel, Retry. Reentering password yields same result, as does retry. Cancelling gives Send Error Message: Send of the message failed. Failed due unexpected error 80004005. No description is available.",Failed to send email through Office 365,"""Login to account ""Microsoft Live Hotmail"" failed due to unexpected error 80004005",3.5,66.7,10.0,-63.2,-6.5
+java,"public static int compare(Object left, Object right) throws PageException {
+	// print.dumpStack();
+	if (left instanceof String) return compare((String) left, right);
+	else if (left instanceof Number) return compare(((Number) left).doubleValue(), right);
+	else if (left instanceof Boolean) return compare(((Boolean) left).booleanValue(), right);
+	else if (left instanceof Date) return compare((Date) left, right);
+	else if (left instanceof Castable) return compare(((Castable) left), right);
+	else if  ...","compares two Objects
+
+@param left
+@param right
+@return different of objects as int
+@throws PageException","/*
+(non-Javadoc)
+
+@see java.lang.Comparable#compareTo(java.lang.Object)","Compares two objects.
+
+@param left the left object
+@param right the right object
+@return the result of the comparison
+@throws PageException","/*
+(non-Javadoc)
+
+@see
+com.ibm.ws.cassandra.core.Comparable#compare(java.lang.Object, java.lang.Object)",0.0,61.1,0.0,-61.1,0.0
+python,"def action_approve(self):
+        for rec in self:
+            if rec.state not in ['draft', 'to approve']:
+                raise UserError(
+                    _(""Can't approve page in '%s' state."") % rec.state)
+            if not rec.am_i_approver:
+                raise UserError(_(
+                    'You are not authorized to do this.\r\n'
+                    'Only approvers with these groups can approve this: '
+                    ) % ', '.join(
+                        [g.display_name
+     ...",Set a change request as approved.,Approve the current document.,Approve a change request.,"Approve a page.
+
+        :return: None",0.0,60.0,18.2,-60.0,-18.2
+go,"func (s *SeesawEngine) Backends(ctx *ipc.Context, reply *int) error {
+	s.trace(""Backends"", ctx)
+	if ctx == nil {
+		return errors.New(""context is nil"")
+	}
+
+	if !ctx.IsTrusted() {
+		return errors.New(""insufficient access"")
+	}
+
+	// TODO(jsing): Implement this function.
+	return fmt.Errorf(""Unimplemented"")
+}",// Backends returns a list of currently configured Backends.,// Backends is part of the Engine interface.,// Backends returns a list of backends.,// Backends implements the Engine interface for SeesawEngine.,26.7,85.7,13.3,-59.0,13.399999999999999
+java,"public boolean handle(ServerHttpRequest request, ServerHttpResponse response)
+			throws IOException {
+		for (HandlerMapper mapper : this.mappers) {
+			Handler handler = mapper.getHandler(request);
+			if (handler != null) {
+				handle(handler, request, response);
+				return true;
+			}
+		}
+		return false;
+	}","Dispatch the specified request to an appropriate {@link Handler}.
+@param request the request
+@param response the response
+@return {@code true} if the request was dispatched
+@throws IOException in case of I/O errors","/*
+(non-Javadoc)
+
+@see
+net.jawr.web.resource.bundle.handler.HandlerMapper#handle(net.jawr
+.web.resource.bundle.handler.Handler, net.jawr
+.web.resource.bundle.handler.ServerHttpRequest, net.jawr
+.web.resource.bundle.handler.ServerHttpResponse)","Handle a request.
+
+@param request
+the request
+@param response
+the response
+@return true if the request was handled, false otherwise
+@throws IOException","/*
+(non-Javadoc)
+
+@see com.ibm.ws.server.server.ServerHandler#handle(com.ibm.ws.server.server.server.ServerHttpRequest, com.ibm.ws.server.server.server.ServerHttpResponse)",3.1,61.8,0.0,-58.699999999999996,3.1
+java,"public boolean hasNext()
+    {
+        if ( _matcher == null )
+        {
+            return false;
+        }
+        if ( _literal != null || _token != null )
+        {
+            return true;
+        }
+        if ( _matcher.find() )
+        {
+            _literal = _template.subSequence( _endPrevios, _matcher.start() ).toString();
+            _token = _matcher.group();
+            _endPrevios = _matcher.end();
+        }
+        else if ( _endPrevios < _template.length() )
+        {
+            ...",Returns true if there are more literals or tokens/delimiters.,"/*
+(non-Javadoc)
+
+@see java.util.Iterator#hasNext()","Returns true if there are more tokens.
+@return true if there are more tokens","Returns true if the next token is valid.
+
+@return true if the next token is valid, false otherwise.",0.0,58.3,21.4,-58.3,-21.4
+php,"public function normalizeLink(string $path, $object, NormalizerContextInterface $context)
+    {
+        $callback = $this->callback;
+
+        $link = $callback($path, $object, $context);
+
+        if (null === $link) {
+            return null;
+        }
+
+        if (!$link instanceof LinkInterface) {
+            $type = is_object($link) ? get_class($link) : gettype($link);
+
+            throw SerializerLogicException::createInvalidLinkTypeReturned($path, $type);
+        }
+
+        return [
+        ...","@param string                     $path
+@param object                     $object
+@param NormalizerContextInterface $context
+
+@return array|null
+
+@throws SerializerLogicException","{@inheritdoc}
+
+@throws SerializerLogicException","@param string $path
+@param object $object
+@param NormalizerContextInterface $context
+
+@throws SerializerLogicException
+
+@return array","@param string $path
+@param object $object
+@param NormalizerContextInterface $context
+
+@return array",23.5,81.5,88.0,-58.0,-64.5
+gitbugs,"As discussed on the mailing list, we should remove the spymemcached client jar from the assembly.
+
+At the same time, we should add instructions in the reference guide on how to add it manually.",Remove spymemcached from assembly,Add spymemcached client jar instructions,Remove spymemcached client jar from assembly,Remove spymemcached client jar from the assembly,22.2,80.0,72.7,-57.8,-50.5
+php,"protected function seedMetrics()
+    {
+        $defaultMetrics = [
+            [
+                'name'          => 'Cups of coffee',
+                'suffix'        => 'Cups',
+                'description'   => 'How many cups of coffee we\'ve drank.',
+                'default_value' => 0,
+                'calc_type'     => 1,
+                'display_chart' => 1,
+            ],
+        ];
+
+        Metric::truncate();
+
+        foreach ($defaultMetrics as $metric) {
+            Metric::create($me ...","Seed the metrics table.
+
+@return void",Create default metrics.,"Seed metrics.
+
+@return void","Seed metrics.
+
+@return void",22.2,80.0,80.0,-57.8,-57.8
+php,"function parseMultiplication(){
+
+		$return = $m = $this->parseOperand();
+		if( $return ){
+			while( true ){
+
+				$isSpaced = $this->isWhitespace( -1 );
+
+				if( $this->PeekReg('/\\G\/[*\/]/') ){
+					break;
+				}
+
+				$op = $this->MatchChar('/');
+				if( !$op ){
+					$op = $this->MatchChar('*');
+					if( !$op ){
+						break;
+					}
+				}
+
+				$a = $this->parseOperand();
+
+				if(!$a) { break; }
+
+				$m->parensInOp = true;
+				$a->parensInOp = true;
+				$return = $this->NewObj3('Less_Tree_Operatio ...","Parses multiplication operation
+
+@return Less_Tree_Operation|null","/*
+Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand
+| Multiplication ::= Operand","Parse a multiplication operator.
+
+@return Less_Tree_Operation","Multiplication
+
+@return Less_Tree_Operation",5.3,62.5,76.9,-57.2,-71.60000000000001
+python,"def pre_delete(cls, sender, instance, *args, **kwargs):
+        cc = ConstantContact()
+        response = cc.delete_email_marketing_campaign(instance)
+        response.raise_for_status()",Deletes the CC email marketing campaign associated with me.,Pre delete method.,Delete the email marketing campaign.,Delete the email marketing campaign.,0.0,57.1,57.1,-57.1,-57.1
+python,"def activate_script(self):
+
+        # must be rethought
+        # ./scripts
+        # deploydir/./scripts
+        self._add_scope(""script"")
+        self.scripts = {}
+        self.script_files = [
+            ""./scripts/script_*.txt"", ""~/.cloudmesh/scripts/script_*.txt""]
+        self._load_scripts(self.script_files)",activates the script command,Load scripts from ./scripts,Activate the script.,activate the script,0.0,57.1,57.1,-57.1,-57.1
+php,"public function isSatisfiedBy(User $user)
+    {
+        return $this->email === $user->email && password_verify($this->password, $user->password);
+    }","@param User $user
+
+@return bool","Check if the given user is satisfied by the password.
+
+@param  \Illuminate\Auth\Users\User  $user
+@return bool","@param User $user
+
+@return bool","@param User $user
+
+@return bool",43.5,100.0,100.0,-56.5,-56.5
+php,"public function up()
+    {
+        Schema::table('pages', function ($table) {
+            $table->text('css')->default('');
+            $table->text('js')->default('');
+        });
+
+        foreach (PageProvider::all() as $page) {
+            $page->update(array('css' => '', 'js' => ''));
+        }
+    }","Run the migrations.
+
+@return void","Migrate up.
+
+@return void","Run the migrations.
+
+@return void","Run the migrations.
+
+@return void",44.4,100.0,100.0,-55.6,-55.6

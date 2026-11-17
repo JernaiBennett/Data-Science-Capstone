@@ -1,0 +1,506 @@
+group,source,reference,full,lora,small,rouge_full,rouge_lora,rouge_small,gap_full_minus_lora,gap_full_minus_small
+go,"func (d *Domain) AbortJob() error {
+	var err C.virError
+	result := C.virDomainAbortJobWrapper(d.ptr, &err)
+	if result == -1 {
+		return makeError(&err)
+	}
+	return nil
+}",// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainAbortJob,// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainAbortJob,// AbortJob aborts a job.,// See also https://libvirt.org/html/libvirt-domain.html#virDomainAbortJob,100.0,0.0,95.2,100.0,4.799999999999997
+java,"public Vector3d unprojectInv(Vector3dc winCoords, int[] viewport, Vector3d dest) {
+        return unprojectInv(winCoords.x(), winCoords.y(), winCoords.z(), viewport, dest);
+    }","/* (non-Javadoc)
+@see org.joml.Matrix4dc#unprojectInv(org.joml.Vector3dc, int[], org.joml.Vector3d)","/* (non-Javadoc)
+@see org.joml.Matrix4dc#unprojectInv(org.joml.Vector3dc, int[], org.joml.Vector3d)","<p>
+Unproject a vector from the specified viewport to the specified destination.
+</p>
+
+@param winCoords
+The viewport to unproject.
+@param viewport
+The viewport to unproject.
+@param dest
+The destination.
+@return The unprojected vector.","<p>
+Unproject a vector with the given coordinates.
+</p>
+
+@param winCoords
+@param viewport
+@param dest
+@return",100.0,0.0,0.0,100.0,100.0
+ruby,"def create
+      @yml_file = Cmtool::YmlFile.new(yml_file_params)
+
+      respond_to do |format|
+        if @yml_file.save
+          format.html { redirect_to(cmtool.yml_files_path, :notice => I18n.t('cmtool.action.create.successful', :model => Cmtool::YmlFile.model_name.human)) }
+          format.xml  { render :xml => @yml_file, :status => :created, :location => @yml_file }
+        else
+          format.html { render :action => ""new"" }
+          format.xml  { render :xml => @yml_file.errors, :st ...","POST /yml_files
+ POST /yml_files.xml","POST /yml_files
+ POST /yml_files.xml","Create a new Cmtool::YmlFile instance.
+ If creation is successful, the browser will be redirected to the 'show' page.",Create a new YAML file,100.0,0.0,0.0,100.0,100.0
+java,"public Vector2f mul(Vector2fc v, Vector2f dest) {
+        dest.x = x * v.x();
+        dest.y = y * v.y();
+        return dest;
+    }","/* (non-Javadoc)
+@see org.joml.Vector2fc#mul(org.joml.Vector2fc, org.joml.Vector2f)","/* (non-Javadoc)
+@see org.joml.Vector2fc#mul(org.joml.Vector2fc, org.joml.Vector2f)","Multiply a vector by a vector.
+
+@param v The vector to multiply.
+@param dest The destination vector.
+@return The resulting vector.","/* (non-Javadoc)
+@see org.joml.Vector2fc#mul(org.joml.Vector2fc, org.joml.Vector2f)",100.0,0.0,100.0,100.0,0.0
+java,"public synchronized void putAll(Map<? extends String, ? extends XAttribute> t) {
+		try {
+			XAttributeMap map = deserialize();
+			map.putAll(t);
+			serialize(map);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}","/* (non-Javadoc)
+@see java.util.Map#putAll(java.util.Map)","/*
+(non-Javadoc)
+
+@see java.util.Map#putAll(java.util.Map)","更新数据
+
+@param t 数据","/*
+(non-Javadoc)
+
+@see org.apache.wsspi.xattribute.XAttributeMap#putAll(java.util.Map)",100.0,0.0,63.6,100.0,36.4
+go,"func (s *VirtualMachineService) DestroyVirtualMachine(p *DestroyVirtualMachineParams) (*DestroyVirtualMachineResponse, error) {
+	resp, err := s.cs.newRequest(""destroyVirtualMachine"", p.toURLValues())
+	if err != nil {
+		return nil, err
+	}
+
+	var r DestroyVirtualMachineResponse
+	if err := json.Unmarshal(resp, &r); err != nil {
+		return nil, err
+	}
+
+	// If we have a async client, we need to wait for the async result
+	if s.cs.async {
+		b, err := s.cs.GetAsyncJobResult(r.JobID, s.cs.timeout)
+		if err  ...",// Destroys a virtual machine.,// Destroys a virtual machine,// DestroyVirtualMachine implements the VirtualMachineService interface.,// DestroyVirtualMachine creates a virtual machine,100.0,0.0,66.7,100.0,33.3
+go,"func (x *CarePlan) UnmarshalJSON(data []byte) (err error) {
+	x2 := carePlan{}
+	if err = json.Unmarshal(data, &x2); err == nil {
+		if x2.Contained != nil {
+			for i := range x2.Contained {
+				x2.Contained[i] = MapToResource(x2.Contained[i], true)
+			}
+		}
+		*x = CarePlan(x2)
+		return x.checkResourceType()
+	}
+	return
+}",// Custom unmarshaller to properly unmarshal embedded resources (represented as interface{}),// Custom unmarshaller to properly unmarshal embedded resources (represented as interface{}),// UnmarshalJSON implements json.Unmarshaler.,// UnmarshalJSON sets the object from the provided JSON representation,100.0,0.0,0.0,100.0,100.0
+java,"@Override
+    public void deserializeInstance(SerializationStreamReader streamReader, OWLTransitiveObjectPropertyAxiomImpl instance) throws SerializationException {
+        deserialize(streamReader, instance);
+    }","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader} to read the
+object's content from
+@param instance     the object instance to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException
+if the deserialization operation is not
+successful","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader} to read the
+object's content from
+@param instance     the object instance to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException
+if the deserialization operation is not
+successful","/*
+(non-Javadoc)
+
+@see org.wso2.developerstudio.eclipse.gmf.esb.diagram.edit.parts.OWLTransitiveObjectPropertyAxiomImpl#deserializeInstance(org.wso2.developerstudio.eclipse.gmf.esb.diagram.serialization.SerializationStreamReader, org.wso2.developerstudio.eclipse.gmf.esb.diagram.model.OWLTransitiveObjectPropertyAxiomImpl)","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader}
+@param instance the object to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException",100.0,2.3,84.5,97.7,15.5
+java,"@Override
+    public void deserializeInstance(SerializationStreamReader streamReader, OWLObjectPropertyRangeAxiomImpl instance) throws SerializationException {
+        deserialize(streamReader, instance);
+    }","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader} to read the
+object's content from
+@param instance     the object instance to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException
+if the deserialization operation is not
+successful","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader} to read the
+object's content from
+@param instance     the object instance to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException
+if the deserialization operation is not
+successful","/*
+(non-Javadoc)
+
+@see org.wso2.developerstudio.eclipse.gmf.esb.diagram.edit.parts.OWLObjectPropertyRangeAxiomImpl#deserializeInstance(org.wso2.developerstudio.eclipse.gmf.esb.diagram.serialization.SerializationStreamReader, org.wso2.developerstudio.eclipse.gmf.esb.diagram.model.OWLObjectPropertyRangeAxiomImpl)","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader}
+@param instance the instance to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException",100.0,2.3,84.5,97.7,15.5
+java,"@Override
+    public void serializeInstance(SerializationStreamWriter streamWriter, OWLSubDataPropertyOfAxiomImpl instance) throws SerializationException {
+        serialize(streamWriter, instance);
+    }","Serializes the content of the object into the
+{@link com.google.gwt.user.client.rpc.SerializationStreamWriter}.
+
+@param streamWriter the {@link com.google.gwt.user.client.rpc.SerializationStreamWriter} to write the
+object's content to
+@param instance     the object instance to serialize
+@throws com.google.gwt.user.client.rpc.SerializationException
+if the serialization operation is not
+successful","Serializes the content of the object into the
+{@link com.google.gwt.user.client.rpc.SerializationStreamWriter}.
+
+@param streamWriter the {@link com.google.gwt.user.client.rpc.SerializationStreamWriter} to write the
+object's content to
+@param instance     the object instance to serialize
+@throws com.google.gwt.user.client.rpc.SerializationException
+if the serialization operation is not
+successful","/*
+(non-Javadoc)
+
+@see org.wso2.developerstudio.eclipse.gmf.esb.impl.OWLSubDataPropertyOfAxiomImpl#serializeInstance(org.wso2.developerstudio.eclipse.gmf.esb.impl.SerializationStreamWriter, org.wso2.developerstudio.eclipse.gmf.esb.impl.OWLSubDataPropertyOfAxiomImpl)","/*
+(non-Javadoc)
+@see com.google.gwt.user.client.rpc.SerializationStreamWriter#serializeInstance(com.google.gwt.user.client.rpc.SerializationStreamWriter,
+com.google.gwt.user.client.rpc.OWLSubDataPropertyOfAxiomImpl)",100.0,2.4,49.4,97.6,50.6
+java,"@Nonnull
+	public static <T> LTieCharConsumerBuilder<T> tieCharConsumer(Consumer<LTieCharConsumer<T>> consumer) {
+		return new LTieCharConsumerBuilder(consumer);
+	}",One of ways of creating builder. This might be the only way (considering all _functional_ builders) that might be utilize to specify generic params only once.,One of ways of creating builder. This might be the only way (considering all _functional_ builders) that might be utilize to specify generic params only once.,"Creates a new {@link LTieCharConsumerBuilder} for the given {@link Consumer}.
+
+@param consumer the {@link Consumer}
+@return a new builder","Creates a new {@link LTieCharConsumerBuilder} with the specified consumer.
+
+@param consumer
+the consumer
+@param <T>
+the type of the consumer
+@return the builder",100.0,4.4,8.2,95.6,91.8
+go,"func (d *Domain) SetUserPassword(user string, password string, flags DomainSetUserPasswordFlags) error {
+	if C.LIBVIR_VERSION_NUMBER < 1002015 {
+		return makeNotImplementedError(""virDomainSetUserPassword"")
+	}
+	cuser := C.CString(user)
+	cpassword := C.CString(password)
+
+	defer C.free(unsafe.Pointer(cuser))
+	defer C.free(unsafe.Pointer(cpassword))
+
+	var err C.virError
+	ret := C.virDomainSetUserPasswordWrapper(d.ptr, cuser, cpassword, C.uint(flags), &err)
+	if ret == -1 {
+		return makeError(&err)
+	} ...",// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainSetUserPassword,// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainSetUserPassword,"// SetUserPassword sets the user's password for the domain.
+//
+// The user's password must be valid for the domain.
+//
+// If the user's password is invalid, an error is returned.",// See also https://libvirt.org/html/libvirt-domain.html#virDomainSetUserPassword,100.0,4.9,95.2,95.1,4.799999999999997
+java,"public ManagedObject get(Token storedToken)
+                    throws ObjectManagerException {
+        final String methodName = ""get"";
+        if (Tracing.isAnyTracingEnabled() && trace.isEntryEnabled())
+            trace.entry(this,
+                        cclass,
+                        methodName,
+                        new Object[] { storedToken });
+
+        byte[] managedObjectBytes = null;
+
+        try {
+            String storedObjectFileName = storeDirectoryName + java.io.File.separat ...","/*
+(non-Javadoc)
+
+@see com.ibm.ws.objectManager.ObjectStore#get(com.ibm.ws.objectManager.Token)","/*
+(non-Javadoc)
+
+@see com.ibm.ws.objectManager.ObjectStore#get(com.ibm.ws.objectManager.Token)","<p>
+Gets the managed object from the store.
+</p>
+
+@param storedToken
+The stored token.
+@return The managed object from the store.
+@throws ObjectManagerException","/*
+(non-Javadoc)
+
+@see com.ibm.ws.objectManager.ManagedObject#get(com.ibm.ws.objectManager.Token)",100.0,5.4,92.9,94.6,7.099999999999994
+java,"public Vector3f cross(float x, float y, float z, Vector3f dest) {
+        float rx = this.y * z - this.z * y;
+        float ry = this.z * x - this.x * z;
+        float rz = this.x * y - this.y * x;
+        dest.x = rx;
+        dest.y = ry;
+        dest.z = rz;
+        return dest;
+    }","/* (non-Javadoc)
+@see org.joml.Vector3fc#cross(float, float, float, org.joml.Vector3f)","/* (non-Javadoc)
+@see org.joml.Vector3fc#cross(float, float, float, org.joml.Vector3f)","Cross product of two vectors.
+
+@param x
+@param y
+@param z
+@param dest
+@return","/* (non-Javadoc)
+@see org.joml.Vector3f#cross(float, float, float, org.joml.Vector3f)",100.0,7.4,92.3,92.6,7.700000000000003
+java,"@Nonnull
+	public static <R> IntFunctionBuilder<R> intFunction(Consumer<IntFunction<R>> consumer) {
+		return new IntFunctionBuilder(consumer);
+	}",One of ways of creating builder. This might be the only way (considering all _functional_ builders) that might be utilize to specify generic params only once.,One of ways of creating builder. This might be the only way (considering all _functional_ builders) that might be utilize to specify generic params only once.,"Creates a new {@link IntFunctionBuilder} with the given consumer.
+
+@param consumer the consumer to use
+@return a new {@link IntFunctionBuilder}",One of ways of creating builder. This is possibly the least verbose way where compiler should be able to guess the generic parameters.,100.0,8.7,49.0,91.3,51.0
+java,"@Override
+    public void deserializeInstance(SerializationStreamReader streamReader, OWLOntologyID instance) throws SerializationException {
+        deserialize(streamReader, instance);
+    }","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader} to read the
+object's content from
+@param instance the object instance to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException
+if the deserialization operation is not
+successful","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader} to read the
+object's content from
+@param instance     the object instance to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException
+if the deserialization operation is not
+successful","/*
+(non-Javadoc)
+
+@see com.ibm.wso2.developerstudio.eclipse.gmf.esb.providers.providers.OWLOntologyID#deserializeInstance(com.ibm.wso2.developerstudio.eclipse.gmf.esb.providers.providers.SerializationStreamReader, com.ibm.wso2.developerstudio.eclipse.gmf.esb.providers.OWLOntologyID)","Deserializes the content of the object from the
+{@link com.google.gwt.user.client.rpc.SerializationStreamReader}.
+
+@param streamReader the {@link com.google.gwt.user.client.rpc.SerializationStreamReader}
+@param instance the object to deserialize
+@throws com.google.gwt.user.client.rpc.SerializationException",100.0,9.0,84.5,91.0,15.5
+go,"func (c *Connect) LookupDeviceByName(id string) (*NodeDevice, error) {
+	cName := C.CString(id)
+	defer C.free(unsafe.Pointer(cName))
+	var err C.virError
+	ptr := C.virNodeDeviceLookupByNameWrapper(c.ptr, cName, &err)
+	if ptr == nil {
+		return nil, makeError(&err)
+	}
+	return &NodeDevice{ptr: ptr}, nil
+}",// See also https://libvirt.org/html/libvirt-libvirt-nodedev.html#virNodeDeviceLookupByName,// See also https://libvirt.org/html/libvirt-libvirt-node.html#virNodeDeviceLookupByName,// LookupDeviceByName returns the device with the given name.,// See also https://libvirt.org/html/libvirt-libvirt-nodedevicelookup.html#virNodeDeviceLookupByName,90.9,0.0,90.9,90.9,0.0
+go,"func (c *Connect) GetLibVersion() (uint32, error) {
+	var version C.ulong
+	var err C.virError
+	ret := C.virConnectGetLibVersionWrapper(c.ptr, &version, &err)
+	if ret < 0 {
+		return 0, makeError(&err)
+	}
+	return uint32(version), nil
+}",// See also https://libvirt.org/html/libvirt-libvirt-host.html#virConnectGetLibVersion,// See also https://libvirt.org/html/libvirt-libvirt-connect.html#virConnectGetLibVersion,// GetLibVersion returns the library version.,// See also https://libvirt.org/html/libvirt-lib.html#virConnectGetLibVersion,90.9,0.0,85.7,90.9,5.200000000000003
+ruby,"def delete(options = {})
+      options = options.merge(
+        queue_url: @queue_url,
+        receipt_handle: @receipt_handle
+      )
+      resp = @client.delete_message(options)
+      resp.data
+    end","@example Request syntax with placeholder values
+
+   message.delete()
+ @param [Hash] options ({})
+ @return [EmptyStructure]","@example Request syntax with placeholder values
+
+   message.delete()
+ @param [Hash] options ({})
+ @return [EmptyStructure]","Deletes a message from the queue.
+
+ @param [Hash] options The options to pass to the client.
+ @option options [String] :queue_url The queue URL.
+ @option options [String] :receipt_handle The receipt handle.
+ @option options [String] :message_type The message type.
+ @option options [String] :message_id The message id.
+ @option options [String] :message_content The message content.
+ @option options [String] :message_type_id The message type id.
+ @option options [String] :message_","Deletes a message from the queue.
+
+ @param [Hash] options
+ @return [Message]",100.0,9.6,41.7,90.4,58.3
+java,"@Nonnull
+	public static <T1, T2, R> LBiObjFltFunction<T1, T2, R> biObjFltFunctionFrom(Consumer<LBiObjFltFunctionBuilder<T1, T2, R>> buildingFunction) {
+		LBiObjFltFunctionBuilder builder = new LBiObjFltFunctionBuilder();
+		buildingFunction.accept(builder);
+		return builder.build();
+	}",One of ways of creating builder. This is possibly the least verbose way where compiler should be able to guess the generic parameters.,One of ways of creating builder. This is possibly the least verbose way where compiler should be able to guess the generic parameters.,"Creates a new {@link LBiObjFltFunction} from the given {@link Consumer}.
+
+<p>
+If the given {@link Consumer} is not {@code null}, the {@link LBiObjFltFunctionBuilder} will be used.
+</p>
+
+<p>
+If the given {@link Consumer} is {@code null}, the {@link LBiObjFltFunctionBuilder} will be used.
+</p>
+
+<p>
+If the given {@link Consumer} is {@code null}, the {@link LBiObjFltFunctionBuilder} will be used.
+</p",One of ways of creating builder. This is possibly the least verbose way where compiler should be able to guess the generic parameters.,100.0,9.8,100.0,90.2,0.0
+java,"public Vector3d positiveY(Vector3d dir) {
+        dir.x = m12 * m20 - m10 * m22;
+        dir.y = m00 * m22 - m02 * m20;
+        dir.z = m02 * m10 - m00 * m12;
+        return dir.normalize(dir);
+    }","/* (non-Javadoc)
+@see org.joml.Matrix3dc#positiveY(org.joml.Vector3d)","/* (non-Javadoc)
+@see org.joml.Vector3dc#positiveY(org.joml.Vector3d)","Returns the positive Y axis of the direction.
+
+@param dir the direction
+@return the positive Y axis","Returns the positive Y coordinate of this vector.
+
+@param dir the vector
+@return the positive Y coordinate of this vector",90.0,0.0,0.0,90.0,90.0
+java,"public void setOutboundInterface(InetAddress inetAddress) {
+		if(!isValid()) {
+			throw new IllegalStateException(""the session has been invalidated"");
+		}
+		if(inetAddress == null) {
+			throw new NullPointerException(""parameter is null"");
+		}
+		String address = inetAddress.getHostAddress();
+		List<SipURI> list = sipFactory.getSipNetworkInterfaceManager().getOutboundInterfaces();
+		SipURI networkInterface = null;
+		for(SipURI networkInterfaceURI : list) {
+			if(networkInterfaceURI.toString().cont ...","/*
+(non-Javadoc)
+@see javax.servlet.sip.SipSession#setOutboundInterface(java.net.InetAddress)","/*
+(non-Javadoc)
+@see javax.servlet.sip.SipSession#setOutboundInterface(java.net.InetAddress)","Sets the outbound interface.
+
+@param inetAddress
+the inet address","/*
+(non-Javadoc)
+
+@see com.ibm.ws.sib.processor.impl.SipSession#setOutboundInterface(com.ibm.ws.sib.processor.impl.InetAddress)",100.0,10.0,41.4,90.0,58.6
+go,"func (d *Domain) GetJobStats(flags DomainGetJobStatsFlags) (*DomainJobInfo, error) {
+	var cparams C.virTypedParameterPtr
+	var cnparams C.int
+	var jobtype C.int
+	var err C.virError
+	ret := C.virDomainGetJobStatsWrapper(d.ptr, &jobtype, &cparams, &cnparams, C.uint(flags), &err)
+	if ret == -1 {
+		return nil, makeError(&err)
+	}
+	defer C.virTypedParamsFree(cparams, cnparams)
+
+	params := DomainJobInfo{}
+	info := getDomainJobInfoFieldInfo(&params)
+
+	_, gerr := typedParamsUnpack(cparams, cnparams, info) ...",// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainGetJobStats,// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainGetJobStats,// GetJobStats returns the job stats for the domain.,// See also https://libvirt.org/html/libvirt-domain.html#virDomainGetJobStats,100.0,10.5,95.2,89.5,4.799999999999997
+go,"func (c *Connect) LookupDomainByName(id string) (*Domain, error) {
+	cName := C.CString(id)
+	defer C.free(unsafe.Pointer(cName))
+	var err C.virError
+	ptr := C.virDomainLookupByNameWrapper(c.ptr, cName, &err)
+	if ptr == nil {
+		return nil, makeError(&err)
+	}
+	return &Domain{ptr: ptr}, nil
+}",// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainLookupByName,// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainLookupByName,// LookupDomainByName returns the domain with the given name.,// See also https://libvirt.org/html/libvirt-domain.html#virDomainLookupByName,100.0,10.5,95.2,89.5,4.799999999999997
+java,"public BaseField setupField(int iFieldSeq)
+    {
+        BaseField field = null;
+        if (iFieldSeq == 0)
+            field = new StringField(this, NAME_SORT, 10, null, null);
+        if (iFieldSeq == 1)
+            field = new UserGroupFilter(this, USER_GROUP_ID, Constants.DEFAULT_FIELD_LENGTH, null, null);
+        if (iFieldSeq == 2)
+            field = new StringField(this, HEADER_TYPE, 30, null, null);
+        if (iFieldSeq == 3)
+            field = new StringField(this, USER, 50, null, n ...",Add this field in the Record's field sequence.,Add this field in the Record's field sequence.,"/*
+(non-Javadoc)
+
+@see org.apache.lucene.document.Field#setupField(int)","<!-- begin-user-doc -->
+<!-- end-user-doc -->
+@generated",100.0,10.5,0.0,89.5,100.0
+java,"public BaseField setupField(int iFieldSeq)
+    {
+        BaseField field = null;
+        //if (iFieldSeq == 0)
+        //{
+        //  field = new CounterField(this, ID, Constants.DEFAULT_FIELD_LENGTH, null, null);
+        //  field.setHidden(true);
+        //}
+        //if (iFieldSeq == 1)
+        //{
+        //  field = new RecordChangedField(this, LAST_CHANGED, Constants.DEFAULT_FIELD_LENGTH, null, null);
+        //  field.setHidden(true);
+        //}
+        //if (iFieldSeq == 2)
+        //{ ...",Add this field in the Record's field sequence.,Add this field in the Record's field sequence.,"/*
+(non-Javadoc)
+
+@see org.apache.ibatis.session.Field#setupField(int)","<!-- begin-user-doc -->
+<!-- end-user-doc -->
+@generated",100.0,10.5,0.0,89.5,100.0
+java,"public BaseField setupField(int iFieldSeq)
+    {
+        BaseField field = null;
+        //if (iFieldSeq == 0)
+        //{
+        //  field = new CounterField(this, ID, Constants.DEFAULT_FIELD_LENGTH, null, null);
+        //  field.setHidden(true);
+        //}
+        //if (iFieldSeq == 1)
+        //{
+        //  field = new RecordChangedField(this, LAST_CHANGED, Constants.DEFAULT_FIELD_LENGTH, null, null);
+        //  field.setHidden(true);
+        //}
+        //if (iFieldSeq == 2)
+        //{ ...",Add this field in the Record's field sequence.,Add this field in the Record's field sequence.,"/*
+(non-Javadoc)
+
+@see org.apache.lucene.document.Field#setupField(int)","<!-- begin-user-doc -->
+<!-- end-user-doc -->
+@generated",100.0,10.5,0.0,89.5,100.0
+go,"func (d *Domain) GetUUID() ([]byte, error) {
+	var cUuid [C.VIR_UUID_BUFLEN](byte)
+	cuidPtr := unsafe.Pointer(&cUuid)
+	var err C.virError
+	result := C.virDomainGetUUIDWrapper(d.ptr, (*C.uchar)(cuidPtr), &err)
+	if result != 0 {
+		return []byte{}, makeError(&err)
+	}
+	return C.GoBytes(cuidPtr, C.VIR_UUID_BUFLEN), nil
+}",// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainGetUUID,// See also https://libvirt.org/html/libvirt-libvirt-domain.html#virDomainGetUUID,// GetUUID returns the UUID of the domain.,// See also https://libvirt.org/html/libvirt-domain.html#virDomainGetUUID,100.0,11.1,95.2,88.9,4.799999999999997
+go,"func (_m *Cluster) AddNode(ctx context.Context, nodename string, endpoint string, podname string, ca string, cert string, key string, cpu int, share int, memory int64, labels map[string]string) (*types.Node, error) {
+	ret := _m.Called(ctx, nodename, endpoint, podname, ca, cert, key, cpu, share, memory, labels)
+
+	var r0 *types.Node
+	if rf, ok := ret.Get(0).(func(context.Context, string, string, string, string, string, string, int, int, int64, map[string]string) *types.Node); ok {
+		r0 = rf(ctx, n ...","// AddNode provides a mock function with given fields: ctx, nodename, endpoint, podname, ca, cert, key, cpu, share, memory, labels","// AddNode provides a mock function with given fields: nodename, endpoint, podname, ca, cert, key, cpu, share, memory, labels",// AddNode mocks base method,"// AddNode provides a mock function with given fields: ctx, nodename, endpoint, podname, ca, cert, key, cpu, share, memory, labels",97.3,8.7,100.0,88.6,-2.700000000000003
+php,"public static function buildTableMap()
+    {
+        $dbMap = Propel::getServiceContainer()->getDatabaseMap(SkillVersionTableMap::DATABASE_NAME);
+        if (!$dbMap->hasTable(SkillVersionTableMap::TABLE_NAME)) {
+            $dbMap->addTableObject(new SkillVersionTableMap());
+        }
+    }",Add a TableMap instance to the database for this tableMap class.,Add a TableMap instance to the database for this tableMap class.,"Build the table map.
+
+@return void","Build the database map for this column.
+
+@return void",100.0,11.8,40.0,88.2,60.0

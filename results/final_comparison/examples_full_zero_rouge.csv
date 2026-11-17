@@ -1,0 +1,711 @@
+group,source,reference,full,lora,small,rouge_full,rouge_lora,rouge_small,gap_full_minus_lora,gap_full_minus_small
+go,"func (s HTTPServer) UpdateImages(w http.ResponseWriter, r *http.Request) {
+	var (
+		vars  = mux.Vars(r)
+		image = vars[""image""]
+		kind  = vars[""kind""]
+	)
+	if err := r.ParseForm(); err != nil {
+		transport.WriteError(w, r, http.StatusBadRequest, errors.Wrapf(err, ""parsing form""))
+		return
+	}
+	var serviceSpecs []update.ResourceSpec
+	for _, service := range r.Form[""service""] {
+		serviceSpec, err := update.ParseResourceSpec(service)
+		if err != nil {
+			transport.WriteError(w, r, http.StatusBadReque ...",// --- handlers supporting deprecated requests,// UpdateImages handles PUT /api/v1/images/{image}/kind/{kind},// UpdateImages updates a release image.,// UpdateImages is part of http.Server interface.,0.0,0.0,0.0,0.0,0.0
+java,"@Programmatic
+    @Override
+    public Object serialize(EventMetadata metadata, EventPayload payload) {
+        final RendererContext rendererContext = new EventSerializerRendererContext(baseUrl, Where.OBJECT_FORMS);
+
+        final JsonRepresentation payloadRepr = asPayloadRepr(rendererContext, payload);
+        final JsonRepresentation eventRepr = asEventRepr(metadata, payloadRepr);
+
+        return jsonFor(eventRepr);
+    }",region > serialize (API),"Use {@link EventSerializer#asEventRepr(EventMetadata, EventPayload)} instead.","/*
+(non-Javadoc)
+
+@see org.springframework.beans.factory.annotation.Autowired
+#serialize(org.springframework.beans.factory.annotation.Qualifier, org.springframework.beans.factory.annotation.Value)","/*
+(non-Javadoc)
+
+@see com.google.gwt.api.event.EventSerializer#serialize(com.google.gwt.api.event.EventMetadata, com.google.gwt.api.event.EventPayload)",0.0,8.0,16.0,-8.0,-16.0
+python,"def blastnthreads(self):
+        # Create the threads for the BLAST analysis
+        for i in range(self.cpus):
+            threads = Thread(target=self.runblast, args=())
+            threads.setDaemon(True)
+            threads.start()
+        # Populate threads for each gene, genome combination
+        for sample in self.metadata:
+            make_path(sample[self.analysistype].reportdir)
+            sample[self.analysistype].report = os.path.join(
+                sample[self.analysistype].repo ...",Setup and create  threads for blastn and xml path,Runs the BLAST analysis in parallel.,Runs the BLAST analysis in parallel.,Create the threads for the BLAST analysis,0.0,0.0,37.5,0.0,-37.5
+java,"public ComponentNameSpaceConfiguration finishBMDInitForReferenceContext(BeanMetaData bmd) throws EJBConfigurationException, ContainerException {
+        return ivEJBMDOrchestrator.finishBMDInitForReferenceContext(bmd,
+                                                                    ivDefaultDataSourceJNDIName,
+                                                                    ivWebServicesHandlerResolver);
+    }","Finish filling out enough of the bean metadata to be able to create the
+component namespace configuration for the bean. The context class loader
+must be the runtime class loader when calling this method.
+
+@return the component namespace configuration","/*
+(non-Javadoc)
+
+@see org.jboss.shrinkwrap.api.container.Container#finishBMDInitForReferenceContext(org.jboss.shrinkwrap.api.BeanMetaData)","/*
+(non-Javadoc)
+
+@see org.jboss.arquillian.container.spi.ComponentNameSpaceConfiguration#finishBMDInitForReferenceContext(org.jboss.arquillian.container.spi.BeanMetaData)","/*
+(non-Javadoc)
+
+@see javax.servlet.bean.BeanMetaData#finishBMDInitForReferenceContext(javax.servlet.bean.BeanMetaData)",0.0,0.0,7.8,0.0,-7.8
+python,"def run_reduce(datastore, obsid, copy_files=True):
+
+    request = 'reduce'
+    request_params = {}
+
+    rb = ReductionBlock()
+    rb.id = obsid
+
+    request_params['oblock_id'] = rb.id
+    request_params[""pipeline""] = rb.pipeline
+    request_params[""instrument_configuration""] = rb.instrument_configuration
+
+    logger_control = dict(
+        default=__name__,
+        logfile='processing.log',
+        format=""%(asctime)s - %(name)s - %(levelname)s - %(message)s"",
+        enabled=True
+    )
+    req ...",Observing mode processing mode of numina.,"Run a reduction block.
+
+    Args:
+        datastore (Datastore): The datastore to use.
+        obsid (str): The oblock id.
+        copy_files (bool): Whether to copy files to the datastore.","Run a reduction block.
+
+    Args:
+        datastore (Datastore): The datastore to use.
+        obsid (str): The ID of the obs to reduce.
+        copy_files (bool): Whether to copy files to the working directory.
+
+    Returns:
+        None.","Run a reduce.
+
+    :param datastore: datastore
+    :param obsid:
+    :param copy_files:
+    :return:",0.0,5.1,0.0,-5.1,0.0
+java,"public void startSession(final InputTimeoutListener listener, final long firstInputTimeout, final long maxInputTimeout, final long nextInputTimeout) {
+        this.inputTimeoutListener = listener;
+        startWaitingForFirstInputTimestamp = INVALID_TIME;
+        firstInputTimestamp = INVALID_TIME;
+        lastInputTimestamp = INVALID_TIME;
+        startSessionTimestamp = getCurrentTimestamp();
+        configureTimersInMilliseconds(firstInputTimeout, maxInputTimeout, nextInputTimeout);
+    }",/* InputTimeoutDetector interface implementation:,"Starts the session.
+
+@param listener the listener
+@param firstInputTimeout the first input timeout
+@param maxInputTimeout the max input timeout
+@param nextInputTimeout the next input timeout","Start the session.
+
+@param listener the listener
+@param firstInputTimeout the first input timeout
+@param maxInputTimeout the max input timeout
+@param nextInputTimeout the next input timeout","Start the session.
+
+@param listener
+@param firstInputTimeout
+@param maxInputTimeout
+@param nextInputTimeout",0.0,0.0,0.0,0.0,0.0
+python,"def save(self, commit=True, **kwargs):
+        if self.post:
+            for form in self.forms:
+                form.instance.post = self.post
+        super().save(commit)",Saves the considered instances.,Set post data for all forms.,Save the form to the database.,"Save the form.
+
+        :param commit:
+        :param kwargs:",0.0,20.0,18.2,-20.0,-18.2
+go,"func (pool *ByteSlicePool) decodeBytes(b PacketReader) []byte {
+	fieldLength := decodeUint16(b)
+	field := pool.getByteSlice(int(fieldLength))
+	b.Read(field)
+	return field
+}",// pooled & direct write fns (TBD: use just them) [RM],// decodeBytes decodes the bytes from the PacketReader.,// decodeBytes decodes a byte slice from a PacketReader.,// decodeBytes decodes a byte slice from a PacketReader.,0.0,0.0,0.0,0.0,0.0
+java,"@Override
+    public IPersonAttributes getPerson(String uid) {
+
+        final IPersonAttributes rslt = delegatePersonAttributeDao.getPerson(uid);
+        if (rslt == null) {
+            // Nothing we can do with that
+            return null;
+        }
+
+        return postProcessPerson(rslt, uid);
+    }","This method is for ""filling"" a specific individual.
+
+@param uid The username (identity) of a known individual
+@return A completely ""filled"" person, including overrides, or <code>null</code> if the person
+is unknown","/*
+(non-Javadoc)
+
+@see org.springframework.beans.factory.config.AbstractFactoryBean#getPerson(java.lang.String)","/*
+(non-Javadoc)
+
+@see org.springframework.security.core.userdetails.UserDetailsService#getPerson(java.lang.String)","/*
+(non-Javadoc)
+
+@see com.ibm.ws.sib.user.model.IPersonAttributeDao#getPerson(java.lang.String)",0.0,0.0,0.0,0.0,0.0
+javascript,"function attr($el, key, val) {
+        if (arguments.length === 2) {
+          return $el.attr('data-apos-ajax-' + key);
+        }
+        $el.attr('data-apos-ajax-' + key, val);
+      }",".attr() prefixed, getter and setter","Set an attribute on an element.
+
+@param {jQuery} $el
+@param {String} key
+@param {String} val","Sets the data-apos-ajax attribute
+@param $el
+@param key
+@param val
+@returns {*}","Set a data-apos-ajax attribute.
+
+@param {Element} $el
+@param {String} key
+@param {String} val
+@return {Object}",0.0,0.0,0.0,0.0,0.0
+ruby,"def write_game_balance
+      write_single_file(""analyze"")
+
+      dir = File.join(""analyze"", parser_name)
+      dir = File.join(dir, @field.to_s) if @field
+      write_analyzed(dir)
+    end",Writing if GameBalance,Write the game balance file.,Write the game balance file.,Write the game balance to the file.,0.0,0.0,0.0,0.0,0.0
+java,"final void _shortDebugString(StringBuffer buf)
+    {
+        if (-1 != _position)
+        {
+            buf.append(_position);
+        }
+        buf.append(""("");
+        buf.append(_state);
+        buf.append("")"");
+    }",Package public because used by LinkedList _debugString(StringBuffer),"Short debug string
+
+@param buf","Short debug string.
+
+@param buf the buffer","/*
+(non-Javadoc)
+
+@see com.ibm.wsspi.debug.StringBuffer#shortDebugString(com.ibm.wsspi.debug.StringBuffer)",0.0,0.0,9.1,0.0,-9.1
+java,"public void setCachedConsumerProps(CachedSessionProperties props)
+    {
+        if (TraceComponent.isAnyTracingEnabled() && tc.isEntryEnabled())
+            SibTr.entry(this, tc, ""setCachedConsumerProps"", props);
+        this.cachedProps = props;
+        if (TraceComponent.isAnyTracingEnabled() && tc.isEntryEnabled())
+            SibTr.exit(this, tc, ""setCachedConsumerProps"");
+    }","Sets the cached destination.
+
+@param props","/*
+(non-Javadoc)
+
+@see com.ibm.ws.sib.processor.runtime.SIMPConsumer#setCachedConsumerProps(com.ibm.ws.sib.processor.runtime.CachedSessionProperties)","/*
+(non-Javadoc)
+
+@see org.apache.jackrabbit.oak.spi.session.Session#setCachedConsumerProps(org.apache.jackrabbit.oak.spi.session.CachedSessionProperties)","/*
+(non-Javadoc)
+
+@see com.ibm.ws.sib.processor.runtime.SIMPSession#setCachedConsumerProps(com.ibm.ws.sib.processor.runtime.CachedSessionProperties)",0.0,0.0,0.0,0.0,0.0
+java,"private void mergeOneOf() {
+        if (SchemaCompositeMatchers.hasOneOf().matches(schema)) {
+            SchemaList list = schema.getOneOf();
+            Schema choice = list.get(rnd.nextInt(list.size()));
+            schema.getJson().remove(""oneOf"");
+            schema.merge(choice);
+        }
+    }",TODO dirty and incorrect for overlaps,Merge one of schema.,Merge one of the schema.,Merge one-of schema with one-of schema.,0.0,0.0,0.0,0.0,0.0
+gitbugs,"https://issues.apache.org/jira/browse/CASSANDRA-13649.
+
+What is the ETA of the above bug fix?",Uncaught exceptions in Netty pipeline CASSANDRA-13649,Fix the ETA of the above bug fix,CASSANDRA-13649 bug fix,Add ETA to ETA,0.0,36.4,0.0,-36.4,0.0
+php,"public function boot()
+    {
+        // Enable post-thumbnail support.
+        $this->enable_thumbnail_support();
+
+        // Register all image sizes.
+        $this->register_image_sizes();
+
+        // Remove all default image sizes.
+        if (Config::get('images.reset_image_sizes') !== false) {
+            $this->add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
+            $this->add_filter('intermediate_image_sizes_advanced', 'remove_custom_image_sizes');
+      ...","Register class conditional filters.
+
+@since  1.0.0","Bootstrap the plugin.
+
+@return void","Boot the plugin.
+
+@return void","Bootstrap the application events.
+
+@return void",0.0,0.0,0.0,0.0,0.0
+java,"private void readObject(ObjectInputStream in) throws IOException, ClassNotFoundException
+	{
+		// this should set servlet...
+		in.defaultReadObject();
+		try
+		{
+			init();
+		}
+		catch(ServletException e)
+		{	// This could happen if it is deserialized in
+			// a container where the name or path does not
+			// exist. I can't see this happening unless the
+			// container itself is screwed up though.
+			throw new IllegalStateException(""Unable to reinitialize dispatcher after deserialization."", e);
+		 ...","Custom deserialization. This handles setting transient fields
+through @{link #init()}.","Deserializes the servlet.
+
+@param in
+The input stream.
+@throws IOException
+@throws ClassNotFoundException","Deserializes the object from the given ObjectInputStream.
+
+@param in
+@throws IOException
+@throws ClassNotFoundException","/*
+(non-Javadoc)
+
+@see javax.servlet.Servlet#readObject(java.io.ObjectInputStream)",0.0,0.0,0.0,0.0,0.0
+gitbugs,"Issue Type: <b>Feature Request</b>
+
+<img width=""436"" alt=""Screen Shot 2021-08-18 at 10 06 39"" src=""https://user-images.githubusercontent.com/382183/129913190-3ca3dc98-b514-4f46-9137-6c29063ca015.png"">
+
+^^ I would like this to please be keyboard shortcutable
+
+VS Code version: Code 1.59.0 (Universal) (379476f0e13988d90fab105c5c19e7abc8b1dea8, 2021-08-04T23:14:40.191Z)
+OS version: Darwin arm64 20.6.0
+Restricted Mode: No
+
+
+<!-- generated by issue reporter -->",Find/replace all: request keybinding for DISMISS action,Keyboard shortcutable,Keyboard shortcutable,Keyboard shortcutable,0.0,0.0,0.0,0.0,0.0
+python,"def _change_to_noFill_bg(self):
+        self._remove_bg()
+        bg = self.get_or_add_bg()
+        bg.add_noFill_bgPr()
+        return bg","Establish a `p:bg` child with no-fill settings.
+
+        Any existing `p:bg` child is first removed.",Change the background to noFill.,"Change the background to noFill.
+
+        :return: The background.","Change the background to no fill background.
+
+        :return:",0.0,0.0,16.0,0.0,-16.0
+java,"public Cell<C,T> right () {
+		if (align == null)
+			align = RIGHT;
+		else {
+			align |= RIGHT;
+			align &= ~LEFT;
+		}
+		return this;
+	}",Adds {@link #RIGHT} and clears {@link #LEFT} for the alignment of the widget within the cell.,"设置指定的指定类型的指定位置
+
+@return 设置的指定位置","Sets the alignment of this cell.
+
+@return this cell","Set the right alignment.
+
+@return this cell",0.0,32.0,26.1,-32.0,-26.1
+gitbugs,"User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.105 Safari/537.36
+
+Steps to reproduce:
+
+DEAD LINK (in Thunderbird) WORKS (in Gmail web user interface): 
+
+An email message from my dentist showed (Guy Roberts LINK [image].jpg)
+
+The message source shows (Guy Roberts LINK [html].txt) including: 
+
+<a href=""guyrobertsdds.com"" target=""_blank"">guyrobertsdds.com</a>
+
+After consulting (https://www.w3schools.com/tags/tag_a.asp), it appears to me ...","? DESIGN QUESTION ? -- STRICT or RELAXED interpretation of ""<a href=""https://..."" ???",DEAD LINK (in Gmail) WORKS (in Thunderbird),DEAD LINK works in Gmail web user interface,Gmail web user interface: DEAD LINK (in Gmail web user interface) WORKS,0.0,0.0,0.0,0.0,0.0
+python,"def _data(self, cube, weighted, prune):
+        result = []
+        for slice_ in cube.slices:
+            if cube.has_mr:
+                return self._mr_index(cube, weighted, prune)
+            num = slice_.margin(axis=0, weighted=weighted, prune=prune)
+            den = slice_.margin(weighted=weighted, prune=prune)
+            margin = num / den
+            proportions = slice_.proportions(axis=1, weighted=weighted, prune=prune)
+            result.append(proportions / margin)
+
+        if len( ...",ndarray representing table index by margin.,"Return the data for the given cube.
+
+        Parameters
+        ----------
+        cube : cube
+            The cube to get the data for.
+        weighted : bool, optional
+            If True, return the weighted data.
+        prune : bool, optional
+            If True, return the pruned data.","Returns the data for the given cube.
+
+        Parameters
+        ----------
+        cube : :class:`~matplotlib.cube.Cube`
+            The cube to get the data for.
+        weighted : bool, optional
+            If ``True``, the data is weighted.
+        prune : bool, optional
+            If ``True``, the data is pruned.
+
+        Returns
+        -------
+        data : array
+            The data for the given cube.","Return the data of a cube.
+
+        Parameters
+        ----------
+        cube : Cube
+            The cube.
+        weighted : bool
+            Whether to prune the data.
+        prune : bool
+            Whether to prune the data.
+
+        Returns
+        -------
+        result : array",0.0,0.0,0.0,0.0,0.0
+python,"def _get_filtered_stmts(self, _, node, _stmts, mystmt):
+        if self.statement() is mystmt:
+            # original node's statement is the assignment, only keep
+            # current node (gen exp, list comp)
+            return [node], True
+        return _stmts, False",method used in _filter_stmts to get statements and trigger break,Return a list of nodes filtered by the statement.,Return a list of statements filtered by the statement.,"Returns a list of all statements in the given node.
+
+        Args:
+            node (Node): the current node.
+            _stmts (list): the list of statements.
+            mystmt (mystmt): the mystmt.",0.0,10.0,16.2,-10.0,-16.2
+gitbugs,"<!-- ⚠️⚠️ Do Not Delete This! bug_report_template ⚠️⚠️ -->
+<!-- Please read our Rules of Conduct: https://opensource.microsoft.com/codeofconduct/ -->
+<!-- 🕮 Read our guide about submitting issues: https://github.com/microsoft/vscode/wiki/Submitting-Bugs-and-Suggestions -->
+<!-- 🔎 Search existing issues to avoid creating duplicates. -->
+<!-- 🧪 Test using the latest Insiders build to see if your issue has already been fixed: https://code.visualstudio.com/insiders/ -->
+<!-- 💡 Instead of creati ...",Horizontal cursor misalignment when using certain fonts,Monospace optimizations don't work,The cursor shadows the correct position when selecting text,The cursor will appear to the right of the visible text for any character in the line,0.0,25.0,8.3,-25.0,-8.3
+php,"public function flush()
+    {
+        $keys = $this->getCacheKeys();
+        foreach ($keys as $key) {
+            Cache::forget($this->makeCacheKey($key));
+        }
+        $this->removeKeys($keys);
+    }",Forget all keys that we know,Flushes the cache.,"Flush the cache.
+
+@return void","Flush the cache.
+
+@return void",0.0,0.0,0.0,0.0,0.0
+php,"public function refresh(Periode $periode)
+    {
+        $options = [];
+        $coefficient = $periode->getCoefficient();
+        $sessions = $periode->getCourseSessions();
+
+        foreach ($sessions as $session) {
+            $matiereId = $session->getId();
+            $totalMatiere = $session->getTotal();
+            $total = empty($totalMatiere) ? null : ceil($coefficient * $totalMatiere);
+            $options[$matiereId] = [];
+            $options[$matiereId]['total'] = $total;
+             ...",totaux et positions devraient être récupérés depuis la matière et pas les pemps,"@param Periode $periode
+
+@return void","@param Periode $periode
+
+@return void","Refresh periode
+
+@param Periode $periode
+
+@return void",0.0,0.0,0.0,0.0,0.0
+java,"public static short readShortBigEndian(InputStream io) throws IOException {
+		int value = io.read();
+		if (value < 0) throw new EOFException();
+		int i = io.read();
+		if (i < 0) throw new EOFException();
+		return (short)(i | (value << 8));
+	}",big-endian or motorola format.,"Read a short from an input stream.
+
+@param io the input stream to read from
+@return the read short
+@throws IOException if an I/O error occurs","Read a short from an input stream.
+
+@param io the input stream
+@return the short
+@throws IOException if an I/O error occurs","Read a short from an input stream.
+
+@param io
+@return
+@throws IOException",0.0,0.0,0.0,0.0,0.0
+javascript,"function defineComponentGetter(object, key, path, _inner) {
+  Object.defineProperty(object, key, {
+    enumerable: true,
+    get: function() {
+      if(typeof _cache[path] === 'undefined') {
+        _cache[path] = require(path);
+        if(typeof _inner === 'string') {
+          _cache[path] = _cache[path][_inner];
+        }
+      }
+      return _cache[path];
+    },
+    set: function(v) {
+      _cache[path] = v;
+    }
+  });
+}",cache of componentPath:requiredObject,"Define a getter for a component
+
+@param {Object} object
+@param {String} key
+@param {String} path
+@param {String} _inner","Define a component getter.
+@param {Object} object
+@param {string} key
+@param {string} path
+@param {string} _inner","defineComponentGetter
+
+@param {Object} object
+@param {String} key
+@param {String} path
+@param {String} _inner",0.0,0.0,0.0,0.0,0.0
+java,"@Override
+    public void destroy() throws Exception {
+        if (baseGateway != null) {
+            baseGateway.destroy();
+        }
+
+        if (watchDog != null) {
+            watchDog.stop();
+            watchDog = null;
+        }
+
+        if (gateway != null) {
+            gateway.destroy();
+            gateway = null;
+        }
+    }","Stop an in-process Gateway that was started using {@link #launch()}.
+
+@throws Exception","/*
+(non-Javadoc)
+
+@see org.jboss.shrinkwrap.api.container.Container#destroy()","/*
+(non-Javadoc)
+
+@see org.jboss.netty.channel.Channel#destroy()","/*
+(non-Javadoc)
+
+@see com.ibm.wsspi.gateway.gateway.Gateway#destroy()",0.0,0.0,8.7,0.0,-8.7
+java,"@Override
+    protected CBORObject EncodeCBORObject() throws CoseException {
+        if (rgbSignature == null) throw new CoseException(""sign function not called"");
+        if (rgbProtected == null) throw new CoseException(""Internal Error"");
+        
+        CBORObject obj = CBORObject.NewArray();
+        obj.Add(rgbProtected);        
+        obj.Add(objUnprotected);
+        if (emitContent) obj.Add(rgbContent);
+        else obj.Add(null);
+        obj.Add(rgbSignature);
+        
+        return o ...","Internal function used to create a serialization of a COSE_Sign1 message
+
+@return CBOR object which can be encoded.
+@throws CoseException Errors generated by the COSE module","/*
+(non-Javadoc)
+@see org.joml.CBOREncoder#EncodeCBORObject()","/*
+(non-Javadoc)
+
+@see org.cose4j.core.CoseObject#EncodeCBORObject()","/*
+(non-Javadoc)
+
+@see com.ibm.ws.cose.core.CBORObject#EncodeCBORObject(com.ibm.ws.cose.core.CBORObject)",0.0,0.0,9.3,0.0,-9.3
+java,"public boolean sendResponse(REQID rid, SocketChannel channel, Message response) {
+    SocketChannelHelper helper = activeConnections.get(channel);
+    if (helper == null) {
+      LOG.severe(""Trying to send a response on an unknown connection"");
+      return false;
+    }
+    OutgoingPacket opk = new OutgoingPacket(rid, response);
+    helper.sendPacket(opk);
+    return true;
+  }",responses/messages are sent.,"Send a response to the given socket channel.
+
+@param rid
+@param channel
+@param response
+@return","Send a response to the given channel.
+
+@param rid The request ID.
+@param channel The channel to send the response to.
+@param response The response to send.
+@return <code>true</code> if the response was sent.","Sends a response to the specified channel.
+
+@param rid
+@param channel
+@param response
+@return",0.0,5.0,0.0,-5.0,0.0
+php,"public function afterDelete()
+    {
+        foreach ($this->getAllFields() as $field) {
+            $path = $this->getFilePath($field, '');
+            if (file_exists($path) && is_dir($path)) {
+                FileHelper::removeDirectory($path);
+            }
+        }
+    }",Removes owner files.,"After delete
+
+@return void","After delete
+
+@return void","Remove all files in the database.
+
+@return void",0.0,0.0,18.2,0.0,-18.2
+java,"protected void pdfA1A(PdfWriter writer) throws IOException, DocumentException, VectorPrintException {
+      builtInFontHack();
+      writer.setPdfVersion(PdfWriter.PDF_VERSION_1_4);
+      writer.setTagged();
+      writer.setPDFXConformance(PdfWriter.PDFX1A2001);
+   }","called as the last step from {@link #style(java.lang.Object, java.lang.Object) }, calls {@link #builtInFontHack()
+} which is necessary when creating PDF/X-1a with iText.
+
+@param writer
+@throws IOException
+@throws DocumentException
+@throws VectorPrintException","/*
+(non-Javadoc)
+
+@see org.apache.lucene.document.Document#pdfA1A(org.apache.lucene.document.PdfWriter)","/*
+(non-Javadoc)
+
+@see java.awt.pdf.PdfWriter#pdfA1A(java.awt.pdf.PdfWriter)","Sets the PDF X1A version of the PDF.
+
+@param writer the PDF writer
+@throws IOException
+@throws DocumentException
+@throws VectorPrintException
+@throws VectorPrintException",0.0,12.8,35.7,-12.8,-35.7
+java,"@Override
+  public NlsMessage create(NlsTemplate template, String key1, Object argument1, String key2, Object argument2, String key3, Object argument3, String key4,
+      Object argument4) {
+
+    // CHECKSTYLE:ON
+
+    Map<String, Object> arguments = new HashMap<>();
+    arguments.put(key1, argument1);
+    arguments.put(key2, argument2);
+    arguments.put(key3, argument3);
+    arguments.put(key4, argument4);
+    return create(template, arguments);
+  }",CHECKSTYLE:OFF (many arguments for convenience),"/*
+(non-Javadoc)
+
+@see com.google.gwt.user.client.rpc.NlsMessageFactory#create(com.google.gwt.user.client.rpc.NlsTemplate, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object)","/*
+(non-Javadoc)
+
+@see com.intellij.lang.NlsMessageFactory#create(com.intellij.lang.NlsTemplate, java.lang.String, java.lang.Object, java.lang.Object)","/*
+(non-Javadoc)
+
+@see
+com.ibm.ws.nls.NlsMessage#create(com.ibm.ws.nls.NlsTemplate, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.Object, java.lang.String, java.lang.String, java.lang.String, java.lang.Object)",0.0,0.0,0.0,0.0,0.0
+python,"def _check_consistency(self):
+        type_count = defaultdict(int)
+        for _, section in sorted(self.sections.items()):
+            type_count[section.section_type] += 1
+
+        if type_count[POINT_TYPE.SOMA] != 1:
+            L.info('Have %d somas, expected 1', type_count[POINT_TYPE.SOMA])",see if the sections have obvious errors,Check consistency of somas.,Check consistency of somas.,Check that all somas are correct.,0.0,0.0,0.0,0.0,0.0
+gitbugs,"{code:java}
+def getPathSize(fs: FileSystem, path: Path): Long = {
+      val fileStatus = fs.getFileStatus(path)
+      val size = if (fileStatus.isDirectory) {
+        fs.listStatus(path)
+          .map { status =>
+            if (isDataPath(status.getPath, stagingDir)) {
+              getPathSize(fs, status.getPath)
+            } else {
+              0L
+            }
+          }.sum
+      } else {
+        fileStatus.getLen
+      }      size
+    } {code}
+Change input parameter fro ...",Optimize redundant fs operations in `CommandUtils#calculateSingleLocationSize#getPathSize` method,Change input parameter from Path to FileStatus,Change input parameter from `Path` to `FileStatus`,Get the size of the given path.,0.0,0.0,0.0,0.0,0.0
+javascript,"function convertToObject(spectra) {
+    var result={};
+    for (var i=0; i<spectra.length; i++) {
+        var spectrum=spectra[i];
+        result[spectrum.type]=spectrum;
+    }
+    return result;
+}","/*
+types are normally: R G B W
+Z (background), E (experimental)
+A: absorbance
+T: transmittance","Converts an array of Spectrum objects to an object
+@param {Array} spectra
+@returns {Object}","Convert an array of spectra to an object
+@param {Array} spectra
+@return {Object}","Converts an array of Spectrum objects to an object.
+
+@param {Array} spectra
+@returns {Object}",0.0,0.0,0.0,0.0,0.0
+php,"public function admin_head() {
+
+		if ( self::get_current_post_type() !== $this->cpt->post_type ) {
+			return;
+		}
+
+		?>
+		<?php if ( isset( $this->args['admin_filters']['m'] ) && ! $this->args['admin_filters']['m'] ) { ?>
+			<style type=""text/css"">
+				#posts-filter select[name=""m""] {
+					display: none;
+				}
+			</style>
+		<?php } ?>
+		<?php
+
+	}",Add some CSS to the post listing screen. Used to hide various screen elements.,"Admin head.
+
+@since  1.0.0
+@access public","Admin head.
+
+@return void","Get the head of the admin page.
+
+@return void",0.0,0.0,8.7,0.0,-8.7
+php,"public function upgradeDatabase()
+    {
+        $db = $this->connection;
+        $db->executeQuery(""UPDATE FileImageThumbnailPaths SET thumbnailFormat = ? WHERE thumbnailFormat = '' AND (path LIKE '%.jpg' OR path LIKE '%.jpeg' OR path LIKE '%.pjpg' OR path LIKE '%.pjpeg')"", [BitmapFormat::FORMAT_JPEG]);
+        $db->executeQuery(""UPDATE FileImageThumbnailPaths SET thumbnailFormat = ? WHERE thumbnailFormat = ''"", [BitmapFormat::FORMAT_PNG]);
+    }","{@inheritdoc}
+
+@see \Concrete\Core\Updater\Migrations\AbstractMigration::upgradeDatabase()","Upgrade the database.
+
+@return void","Upgrade database.
+
+@return void","Upgrade the database
+
+@return void",0.0,0.0,0.0,0.0,0.0
+php,"public function initPage( \OutputPage $out ){
+		parent::initPage( $out );
+
+		$out->addModules(self::$autoloadModules);
+	}",Load required modules with ResourceLoader,"Initializes the output page.
+
+@param \OutputPage $out","Initialize the output page.
+
+@param \OutputPage $out","@param \OutputPage $out
+
+@return void",0.0,0.0,0.0,0.0,0.0

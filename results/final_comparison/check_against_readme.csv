@@ -1,0 +1,10 @@
+model,metric,this_script,readme,status
+Full fine-tune,BLEU-4,16.4,16.4,OK
+Full fine-tune,ROUGE-L,39.89,39.89,OK
+Full fine-tune,METEOR,37.52,37.54,OK
+LoRA,BLEU-4,13.32,13.32,OK
+LoRA,ROUGE-L,37.8,37.79,OK
+LoRA,METEOR,35.28,35.29,OK
+CodeT5-small,BLEU-4,13.44,13.44,OK
+CodeT5-small,ROUGE-L,37.07,37.07,OK
+CodeT5-small,METEOR,34.7,34.71,OK

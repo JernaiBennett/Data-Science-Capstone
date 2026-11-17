@@ -1,0 +1,13 @@
+model,input_length,n,ROUGE-L
+Full fine-tune,shortest 25%,5011,45.17
+Full fine-tune,25-50%,4997,40.6
+Full fine-tune,50-75%,4988,38.52
+Full fine-tune,longest 25%,4992,35.25
+LoRA,shortest 25%,5011,42.75
+LoRA,25-50%,4997,38.3
+LoRA,50-75%,4988,36.85
+LoRA,longest 25%,4992,33.27
+CodeT5-small,shortest 25%,5011,42.61
+CodeT5-small,25-50%,4997,37.85
+CodeT5-small,50-75%,4988,35.8
+CodeT5-small,longest 25%,4992,32.01

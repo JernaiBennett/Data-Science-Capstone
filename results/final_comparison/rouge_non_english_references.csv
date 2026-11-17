@@ -1,0 +1,7 @@
+model,subset,n,ROUGE-L
+Full fine-tune,mostly non-ASCII reference,146,47.73
+Full fine-tune,ASCII reference,19842,39.83
+LoRA,mostly non-ASCII reference,146,41.22
+LoRA,ASCII reference,19842,37.77
+CodeT5-small,mostly non-ASCII reference,146,39.21
+CodeT5-small,ASCII reference,19842,37.05

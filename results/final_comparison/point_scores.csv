@@ -1,0 +1,25 @@
+model,group,n,BLEU-4,ROUGE-L,METEOR
+Full fine-tune,ALL,19988,16.4,39.89,37.52
+Full fine-tune,gitbugs,973,15.11,29.35,25.76
+Full fine-tune,go,3397,24.97,51.54,49.08
+Full fine-tune,java,4458,17.87,40.4,38.71
+Full fine-tune,javascript,1188,7.46,26.68,25.28
+Full fine-tune,php,5092,17.49,47.83,45.64
+Full fine-tune,python,4355,9.63,28.07,24.89
+Full fine-tune,ruby,525,17.36,30.65,28.22
+LoRA,ALL,19988,13.32,37.8,35.28
+LoRA,gitbugs,973,13.57,27.12,23.89
+LoRA,go,3397,20.96,48.56,45.95
+LoRA,java,4458,13.52,37.46,35.39
+LoRA,javascript,1188,5.93,25.65,24.48
+LoRA,php,5092,14.0,46.21,43.97
+LoRA,python,4355,7.5,26.69,23.24
+LoRA,ruby,525,15.65,28.89,26.39
+CodeT5-small,ALL,19988,13.44,37.07,34.7
+CodeT5-small,gitbugs,973,12.64,25.05,21.24
+CodeT5-small,go,3397,22.32,49.4,46.85
+CodeT5-small,java,4458,13.5,36.19,34.33
+CodeT5-small,javascript,1188,6.14,24.58,23.84
+CodeT5-small,php,5092,13.5,45.58,43.19
+CodeT5-small,python,4355,7.64,25.66,22.81
+CodeT5-small,ruby,525,12.67,27.51,24.97

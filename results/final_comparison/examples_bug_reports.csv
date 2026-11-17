@@ -1,0 +1,298 @@
+group,source,reference,full,lora,small,rouge_full,rouge_lora,rouge_small,gap_full_minus_lora,gap_full_minus_small
+gitbugs,"<img width=""468"" alt=""screen shot 2015-11-13 at 3 56 51 pm"" src=""https://cloud.githubusercontent.com/assets/979966/11139808/877beab8-8a1f-11e5-9555-8d2d4e46edc6.png"">",False positive in file path pattern matching in Output Channel,Markdown editor is broken,Screen shot is not supported by GitHub,screen shot 2015-11-13 at 3 56 51 pm,0.0,0.0,0.0,0.0,0.0
+gitbugs,"I had posted this as a question on [Stack Overflow](https://stackoverflow.com/questions/48121185/vscode-terminal-drops-output-from-aws-cli) and unfortunately hadn't received any insight from it - so I was encouraged to drop this here as an issue. 
+
+Summary:
+While running some AWS CLI commands recently via Powershell in the VSCode terminal, I noticed it completely drops/doesn't render all the output.
+
+- VSCode Version: 1.19.3
+- OS Version: Windows 10 Pro (Version 1709, Build 16299.214)
+- P ...",VSCode Terminal drops output from AWS CLI,Stack Overflow in AWS CLI,Stack Overflow when running AWS CLI,VSCode terminal drops/doesn't render all the output,33.3,30.8,50.0,2.4999999999999964,-16.700000000000003
+gitbugs,"+++ This bug was initially created as a clone of Bug #1817867 +++
+
+111.0b2 - restore works, but `From` column is to the left of `Subject`.  Subject should be first.",Column order is incorrect for `Restore Column Order` of message list / thread pane,"Restore works, but `From` column is to the left of `Subject`.",Restore works when `From` column is left of `Subject`.,`From` column is to the left of `Subject`.,25.0,27.3,28.6,-2.3000000000000007,-3.6000000000000014
+gitbugs,"- VSCode Version: Code 1.18.1 (929bacba01ef658b873545e26034d1a8067445e9, 2017-11-16T18:32:36.023Z)
+- OS Version: Windows_NT x64 6.3.9600
+- Extensions: 
+
+Extension|Author (truncated)|Version
+---|---|---
+java|red|0.14.0
+vscode-java-debug|vsc|0.3.1
+vscode-java-pack|vsc|0.2.0
+
+Hi, guys. First issue here. What I'll describe is a task/terminal issue. I looked around the related repositories, but still think it fits here. Let me know if I'm wrong.
+
+I'm using dependsOn to create a chain of t ...",Environment variables not persisted across task chains,Depending on tasks.json does not work,"When using dependsOn, the first task is usually not the one I'm executing, but the last one to be executed is actually the last one to be executed.",Tasks.json file cannot be created,14.3,5.6,0.0,8.700000000000001,14.3
+gitbugs,"VS Code: 1.82.1
+OS: Windows_NT x64 10.0.19045
+Git: 2.42.0.windows.2
+
+I'm using VS Code 1.82.1 on Windows 10 with the latest updates. I installed Git for Windows 2.42.0, which comes with Git Bash.
+
+I have long used Git Bash in the VS Code terminal, and noticed that sometimes what I paste is corrupted. Now with these current versions I have taking the time to investigate.
+
+**VS Code corrupts text input via `Ctrl+V` (or the `Paste` command generally) if the input string is 90 characters or  ...",Paste in Git Bash in terminal corrupts input if length is 90 characters or more.,VS Code corrupts text input if it is 90 characters or more,VS Code corrupts text input via `Ctrl+V` if the input string is 90 characters or more,VS Code corrupts text input via `Ctrl+V`,59.3,50.0,17.4,9.299999999999997,41.9
+gitbugs,"User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:124.0) Gecko/20100101 Firefox/124.0
+
+Steps to reproduce:
+
+I left Thunderbird 115.9.0 (64-bit) running overnight while my machine was unattended.
+Using my Mac Silicon M3 OSX 14.4.1 (23E224)
+
+
+Actual results:
+
+Memory usage by Thunderbird climbed to 87 GB.
+
+
+Expected results:
+
+None of the above",Large memory leakage on Mac Silicon (memory used: 87 GB),Memory usage by Thunderbird climbed to 87 GB,Memory usage by Thunderbird climbed to 87 GB,Memory usage by Thunderbird climbed to 87 GB,33.3,33.3,33.3,0.0,0.0
+gitbugs,"Presently distCp, uses the producer-consumer kind of setup while building the listing, the input queue and output queue are both unbounded, thus the listStatus grows quite huge.
+
+Rel Code Part :
+
+https://github.com/apache/hadoop/blob/trunk/hadoop-tools/hadoop-distcp/src/main/java/org/apache/hadoop/tools/SimpleCopyListing.java#L635
+
+This goes on bredth-first traversal kind of stuff(uses queue instead of earlier stack), so if you have files at lower depth, it will like open up the entire tre ...",DistCp: Reduce memory usage on copying huge directories,DistCp listStatus grows huge,DistCp uses producer-consumer kind of setup,Hadoop-distcp is broken when building the listing,33.3,13.3,12.5,19.999999999999996,20.799999999999997
+gitbugs,Currently sticky scroll shows the last line of the scope only when shift is pressed followed by a mouse move event. Pressing on shift does not automatically show the last line of the scope which it should.,Sticky scroll should show the last line of the scope as soon as shift is pressed,Sticky scroll shows the last line of scope only when shift is pressed,Currently sticky scroll shows the last line of scope only when shift is pressed followed by a mouse move event,Sticky scroll shows the last line of the scope,69.0,55.6,64.0,13.399999999999999,5.0
+gitbugs,"User Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:87.0) Gecko/20100101 Firefox/87.0
+
+Steps to reproduce:
+
+Open a LOCAL FOLDERS folder of stored email.  You might see many older emails you have stored there. Open one of the new emails and reply to it.  
+
+
+Actual results:
+
+When you have replied the user interface returns to the same folder, but now it is empty and does not show any emails at all. You must click the local folder once to bring back the display of all emails in that ""Local ...","After replying to message from Local Folders, message list temporarily blank until the local folder is reselected in folder list",Local Folders area is empty,User interface returns to the same folder but does not show any emails at all,Local FOLDERS folder does not show any emails at all,24.0,17.1,20.0,6.899999999999999,4.0
+gitbugs,"This is originally caused by bug 1696895. As long as that is not fixed, we need to add the missing information manually.",MessageHeader for nntp messages does not include recipients and ccList,Add missing information to report,Fix bug 1696895,Add missing information,0.0,0.0,0.0,0.0,0.0
+gitbugs,"During the CASSANDRA-15536 epic we ported multiple Python dtests to in-JVM dtests.
+
+The ported Python dtests are still present but marked with a new {{@ported_to_in_jvm}} annotation. JVM dtests didn't support vnodes at that time, so when a Python dtest is marked with that annotation it's only run for vnodes config, whereas it's skipped if vnodes are off.
+
+However, we have had support for vnodes on JVM dtests since 4.1. Thus, I think we should modify the {{@ported_to_in_jvm}} annotation to al ...",Dtests marked with @ported_to_in_jvm can be skipped since 4.1,Port Python dtests to in-JVM dtests,Port Python dtests to in-JVM dtests,Ported Python dtests to in-JVM dtests,40.0,40.0,40.0,0.0,0.0
+gitbugs,"User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36
+
+Steps to reproduce:
+
+1. Set up any Light theme 
+2. Open any Custimise toolbar window in TB
+3. Observe solid black borders artefacts from the dark mode. 
+
+
+Actual results:
+
+Instead of light theme UI I observe dark theme colours.
+
+
+Expected results:
+
+The light theme should not inherit dark theme settings.
+Let disable DARK theme completely.",How to DISABLE dark mode in TB Windows?,Light theme does not inherit dark theme settings,Light theme UI does not inherit dark theme settings,Light theme UI does not inherit dark theme settings from dark mode,12.5,11.8,20.0,0.6999999999999993,-7.5
+gitbugs,"Issue Type: <b>Feature Request</b>
+
+I'd like an option to disable the ""Open file in editor (ctrl + click)"" tooltip in the terminal that pops up when the mouse rests over a file path. If you are in a section with a lot of paths, like a stack trace, then the tool tip can easily pop up when you don't want it to. Simply moving the mouse away from the path or even clicking a blank spot isn't enough to dismiss the tooltip; you have to mouse over it.
+
+One example output that has a lot of paths is a ...",Terminal link hover doesn't go away unless tooltip is hovered,"""Open file in editor (ctrl + click)"" tooltip in terminal",Tool tip disappears when mouse rests over a file path,"""Open file in editor (ctrl + click)"" tooltip in editor",10.0,0.0,10.0,10.0,0.0
+gitbugs,"Steps to reproduce:
+
+Updated to TB 91.4.0 on 8th December 2021 automatically.
+
+
+Actual results:
+
+On 9th December unable to forward, or sometimes reply to, random messages.  I appear to be receiving all messages and can write and send new messages.  I get this error message: 
+
+Sending of the message failed.
+The message could not be sent using Outgoing server (SMTP) smtp.btinternet.com for an unknown reason. Please verify that your Outgoing server (SMTP) settings are correct and try again.
+
+Sendin ...",TB 91.4 does not allow me to forward or reply to some messages,"Unable to forward, or sometimes reply to, random messages",Sending of the message failed.,TB 91.4.0 on 8th December 2021,52.2,0.0,27.3,52.2,24.900000000000002
+gitbugs,"From https://github.com/microsoft/vscode/issues/186940
+
+The setting is respected now, so I'm opening a new issue, but it seems that it doesn't take effect until I create a new terminal
+
+- Set the setting to ""false""
+- Click the arrow next to the terminal + button
+- I still see my WSL terminal profile
+<img width=""704"" alt=""image"" src=""https://github.com/microsoft/vscode/assets/323878/c8ee0ee6-de58-46f7-925f-bb074d3b2fa4"">
+
+
+- Click the + button to add a terminal
+- Click the arrow
+- Now ...",useWslProfiles is not respected until I create a new terminal,Terminal profile doesn't show after adding a terminal,WSL terminal profile doesn't work,"Set the setting to ""false"" when opening a new terminal",21.1,12.5,30.0,8.600000000000001,-8.899999999999999
+gitbugs,"User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:123.0) Gecko/20100101 Firefox/123.0
+
+Steps to reproduce:
+
+Clicking on a notification when receiving a new email.
+
+
+Actual results:
+
+The notification disappears and is moved to the notification centre. Clicking on it in the notification centre, the notification is dismissed, but nothing happens.
+
+
+Expected results:
+
+A window with the received email should be opened—both when clicking on the briefly displayed notification or on the notificai ...",Email is not opened when clicking on notificaiton (Windows 11),Clicking on a notification disappears and moves to the notification centre,Notification disappears and is moved to the notification centre when receiving a new email,Notification disappears when receiving a new email,19.0,16.7,11.8,2.3000000000000007,7.199999999999999
+gitbugs,"STR:
+1. Using a fresh profile, open two different Firefox windows, which I'll call window ""A"" and ""B"".
+2. In window A, open several new tabs, visit some sites (e.g. https://www.mozilla.org/en-US/ ) and then close at least one of those tabs.
+3. Click the Firefox View button (icon at top-left of the window) in window A and in window B, and compare the contents of their ""Recently Closed"" sections.
+4. Now, close window A entirely. Again, check Firefox View ""Recently Closed"" again in your remaining w ...","Firefox View's ""Recently closed"" section might be over-promising (it only shows closed tabs *from the same window* but doesn't make that clear)","Firefox View ""Recently Closed"" shows ""No recently closed pages"" and ""Never fear losing a closed tab""","Firefox View ""Recently Closed"" doesn't show me the same content regardless of Firefox window","""Recently Closed"" section doesn't convey the ""Recently Closed"" section",29.3,35.0,28.6,-5.699999999999999,0.6999999999999993
+gitbugs,"* Do normal extension development
+* Step into code from extension host (i.e. not the extension)
+* Stop debugging
+* While code from extension host is visible, press F5
+
+=> 🐛 you are being asked to save the file",Debug: being asked to save a file on F5,Code from extension host is being asked to save file,Extension host is not visible,Code from extension host is not visible,52.6,0.0,0.0,52.6,52.6
+gitbugs,"`SnippetString.appendChoice` doesn't handle commas in choices correctly. Given the following code:
+
+```ts
+const editor = vs.window.activeTextEditor;
+const snippet = new vs.SnippetString();
+snippet.appendChoice([""One,Two"", ""Three,Four""], 1);
+await editor.insertSnippet(snippet, new vs.Range(new vs.Position(0, 0), new vs.Position(0, 0)));
+```
+
+This is what shows in the editor:
+
+![Screenshot 2020-09-22 at 12 07 28](https://user-images.githubusercontent.com/1078012/93875217-7da95a00-fccc-1 ...",SnippetString does not escape commas in choices,SnippetString.appendChoice doesn't handle commas in choices correctly,SnippetString.appendChoice doesn't handle commas in choices correctly,`SnippetString.appendChoice` doesn't handle commas in choices correctly,50.0,50.0,50.0,0.0,0.0
+gitbugs,Make spark stagingDir can be congfigurable,Make spark stagingDir can be congfigurable,Make spark stagingDir congfigurable,Make spark stagingDir congfigurable,Make spark stagingDir congfigurable,80.0,80.0,80.0,0.0,0.0
+gitbugs,"User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:88.0) Gecko/20100101 Firefox/88.0
+
+Steps to reproduce:
+
+In windows 10, Pin Firefox to taskbar.
+Right click on the icon, then right click on Firefox, click on properties.
+Under the shortcut tab, add "" -private"" at the end of target
+click on apply, OK.
+Now left click on the taskbar icon. 
+Click on new tab.
+
+
+
+Actual results:
+
+Firefox successfully launches in private mode, but when new tab is opened, the tab shows quick links, highlights like ...",Launching private browsing via taskbar causes new tabs to show non private homepage,Firefox successfully launches in private mode,"Firefox successfully launches in private mode but when new tab is opened, the tab shows quick links, highlights like it would in non-private browsing session",Firefox not launching in private mode,10.5,20.5,21.1,-10.0,-10.600000000000001
+gitbugs,"<!-- Do you have a question? Please ask it on http://stackoverflow.com/questions/tagged/vscode -->
+
+- VSCode Version:1.9.0
+- OS Version:macOs 10.12.3
+
+![image](https://cloud.githubusercontent.com/assets/7608992/22773402/f3731ffc-eedc-11e6-8612-4ccc5035551f.png)
+
+![biu](https://cloud.githubusercontent.com/assets/7608992/22773581/e5421996-eedd-11e6-887b-87b9398042ac.gif)",Recognition error with emoji,[macOS 10.12.3] Highlights don't work,VSCode version mismatch,[image](https://cloud.githubusercontent.com/assets/7608992/22773402/f3731ffc-eedc-11e6-8612-4ccc5035551f.png),0.0,0.0,0.0,0.0,0.0
+gitbugs,"User Agent: Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/115.0
+
+Steps to reproduce:
+
+I downloaded latest seamonkey-2.53.17.1 sources, configured and compiled them with rust-1.73.0 toolchain on x86_64 
+
+
+Actual results:
+
+the build fails with these errors in simd: 
+
+ 4:39.57 warning: use of deprecated method `std::error::Error::cause`: replaced by Error::source, which can support downcasting
+ 4:41.74 error: unrecognized platform-specific intrinsic function: `simd_shuffle2`
+ 4:4 ...",seamonkey fails to build with rust-1.73.0: error: unrecognized platform-specific intrinsic function: `simd_shuffle2`,rust-1.73.0 build fails with these errors in simd,build fails with these errors in simd,Build fails with rust-1.73.0 toolchain on x86_64,35.7,25.0,42.9,10.700000000000003,-7.199999999999996
+gitbugs,"STR:
+
+1. Set download preferences to store downloads in your home directory's Downloads folder
+    * More precisely, in my case, it means prefs have the following values:
+        * `browser.download.dir`: `/Users/jryans/Downloads`
+        * `browser.download.folderList`: `1`
+        * `browser.download.improvements_to_download_panel`: `false`
+2. Download a file, such as VS Code by going to https://code.visualstudio.com/Download and clicking some download button on the page
+
+ER:
+
+The downloaded f ...",Unexpected extra folder created when downloading files,Downloads are not shown in the right place,Downloads folder does not appear in the right place,Download preferences should not appear in your home directory's Downloads folder,0.0,12.5,10.5,-12.5,-10.5
+gitbugs,"When quotas are enabled, rpc throttling is also enabled. There's a shell command to disable rpc throttles, added in HBASE-21159. As we do with the balancer, we should display a warning banner on the master UI when the quota system is enabled but the {{disable_rpc_throttle}} has been activated.",Add a banner to the masterUI when disable_rpc_throttle is active,Disable rpc throttling when quotas are enabled,Disable rpc throttling when quotas are enabled,Disable rpc throttling on quota system,21.1,21.1,22.2,0.0,-1.0999999999999979
+gitbugs,"**Filed by:** nerli [at] mozilla.com
+**Parsed log:** https://treeherder.mozilla.org/logviewer?job_id=424929500&repo=autoland
+**Full log:** https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/M5c9dQjJT3aI6RCulzJBfQ/runs/0/artifacts/public/logs/live_backing.log
+**Reftest URL:** https://hg.mozilla.org/mozilla-central/raw-file/tip/layout/tools/reftest/reftest-analyzer.xhtml#logurl=https://firefox-ci-tc.services.mozilla.com/api/queue/v1/task/M5c9dQjJT3aI6RCulzJBfQ/runs/0/artifacts/public/log ...",Intermittent TV toolkit/components/shopping/test/browser/browser_shopping_integration.js | Uncaught exception in test bound test_sidebar_navigation - AbortError: Actor 'SpecialPowers' destroyed before query 'Spawn' was resolved,Intermittent toolkit/components/shopping/test/browser/browser_shopping_integration.js | Uncaught exception in test bound test_sidebar_navigation - AbortError: Actor 'SpecialPowers' destroyed before query 'Spawn' was resolved,Intermittent toolkit/components/shopping/test/browser/browser_shopping_integration.js | Uncaught exception in test bound test_sidebar_navigation - AbortError: Actor 'SpecialPowers' destroyed before query 'Spawn' was resolved,Intermittent toolkit/components/shopping/test/browser/browser_shopping_integration.js | Uncaught exception in test bound test_sidebar_navigation - AbortError: Actor 'SpecialPowers' destroyed before query 'Spawn' was resolved,98.2,98.2,98.2,0.0,0.0
+gitbugs,I accidentally broken sstableverify dtest in CASSANDRA-17056 for versions <= 4.1,Fix broken sstableverify dtest,Fix sstableverify dtest in CASSANDRA-17056,I accidentally broken sstableverify dtest in CASSURE_17056,Sstableverify dtest in CASSANDRA-17056,60.0,50.0,44.4,10.0,15.600000000000001
+gitbugs,"+++ This bug was initially created as a clone of Bug #1798374 +++
+
+- Users have no way of telling apart different target folders with same folder name from `Move|Copy to > Recent > ...` menu for reusing those targets. 
+- Problem is worse for users with large, similar folder structures (IT support etc.) who are most likely to use this ux-efficiency feature to avoid re-digging into deep folder structures.
+- Same for `Move|Copy to > Favorites > ...`  by analogy.
+- We need to add information to disa ...",Missing target account/folder path information to disambiguate `Move|Copy to > Recent|Favorites > Inbox|Foldername` - e.g. menu tooltip or extended menu label,No way of telling apart different target folders with same folder name from `Move|Copy to > Recent > ...` menu,`Move|Copy to > Recent > ...` is not a lucky guessing game,Ambiguous multiple target folders with same name and no way of disambiguation,34.1,24.2,5.7,9.900000000000002,28.400000000000002
+gitbugs,"Steps to Reproduce:
+
+1. Have following settings in your workspace settings file
+```json
+ ""[typescript][javascript]"": {
+            ""editor.insertSpaces"": false,
+            ""editor.defaultFormatter"": ""vscode.typescript-language-features"",
+            ""editor.formatOnSave"": true,
+            ""editor.codeActionsOnSave"": {
+                ""source.organizeImports"": false,
+                ""source.fixAll"": ""never""
+            }
+          },
+        ""[python]"": {
+            ""editor.codeA ...",Unsaved changes error during settings migration,Settings are migrated properly,Settings are migrated properly,Settings are migrated properly,20.0,20.0,20.0,0.0,0.0
+gitbugs,"Currently for CI build and testing we maintain personality scripts (i.e., [here|https://github.com/apache/yetus/blob/master/precommit/src/main/shell/personality/hadoop.sh]) in both Apache Yetus and Apache Hadoop. This poses problem when one needs to change both places, for example HADOOP-17125. 
+
+This proposes to move the personality file into the Hadoop repo itself, so that we can manage them in a single place. The downside for this is we may need to duplicate the scripts in every branch.",Move personality file from Yetus to Hadoop repository,Move personality scripts into Hadoop repo,Remove personality scripts in both Apache Yetus and Apache Hadoop,Maintain personality scripts in CI build,42.9,33.3,14.3,9.600000000000001,28.599999999999998
+gitbugs,"User Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36
+
+
+
+
+Expected results:
+
+Naprawa problemu","W zakładce wysłane błędnie zapisują się dane korespondenta. Wiadomość wysłana do: bpiurek@vp.pl  o temacie ""Karta Szkolenia Jedziak Wiktoria"", wysłana 29.12.2021 godz. 16:04 w zakładce wysłane zapisała się jako wysłana do ""aneta.tymoszycka@mirjan.info""",Naprawa problemu,Naprawa problemu,Naprawa problemu,0.0,0.0,0.0,0.0,0.0
+gitbugs,"[~ndimiduk] pointed out that, after this change went in, TestSecureRESTServer started failing with Hadoop3 on branch-2.3
+
+https://builds.apache.org/job/HBase%20Nightly/job/branch-2.3/56/
+
+Of course, I ran this with 1.8.0_241 and Maven 3.6.33 and it passed :) {{mvn clean package -Dtest=TestSecureRESTServer -Dhadoop.profile=3.0 -DfailIfNoTests=false}}
+
+FYI [~stoty] in case you can repro a failure and want to dig in. Feel free to re-assign.
+
+It looks like we didn't have a nightly run of bra ...",Hadoop2 and Hadoop3 profiles being activated simultaneously causing test failures,TestSecureRESTServer failed on branch-2.3,TestSecureRESTServer failed with Hadoop3 on branch-2.3,TestSecureRESTServer failed to dig in,0.0,11.1,0.0,-11.1,0.0
+gitbugs,"Refs: https://github.com/Microsoft/vscode/issues/50496
+
+I am not sure why `editor.cursorWidth` shows up as non-editable even though its value seems to be just a number?
+
+![image](https://user-images.githubusercontent.com/900690/40654459-b39d488a-633e-11e8-8277-28a1644a320b.png)",Settings: shows up as non-editable even though it is just a number?,editor.cursorWidth shows up as non-editable even though its value is just a number,`editor.cursorWidth` shows up as non-editable,`editor.cursorWidth` shows up as non-editable,78.6,50.0,50.0,28.599999999999994,28.599999999999994
+gitbugs,SPARK-36583 upgrade commons-pool2 from 2.6.2 to 2.11.1 and There are some deprecated API usage related to it that need to be cleaned up.,Clean up deprecated api usage related to commons-pool2,Remove deprecated API usage related to commons-pool2,Upgrade commons-pool2 from 2.6.2 to 2.11.1,SPARK-36583 upgrade commons-pool2 to 2.11.1,82.4,20.0,22.2,62.400000000000006,60.2
+gitbugs,"Saw this test failure from 2.3 nightly.
+
+https://ci-hadoop.apache.org/job/HBase/job/HBase%20Nightly/job/branch-2.3/190/testReport/junit/org.apache.hadoop.hbase.io.hfile.bucket/TestVerifyBucketCacheFile/health_checks___yetus_jdk8_hadoop2_checks___testRetrieveFromFile_1__blockSize_16_384__bucketSizes__I_371a67ec_/
+h1. Regression
+
+health checks / yetus jdk8 hadoop2 checks / org.apache.hadoop.hbase.io.hfile.bucket.TestVerifyBucketCacheFile.testRetrieveFromFile[1: blockSize=16,384, bucketSizes=[ ...",Test failure: TestVerifyBucketCacheFile.testRetrieveFromFile,TestVerifyBucketCacheFile failure from 2.3 nightly,TestVerifyBucketCacheFile.testRetrieveFromFile failed,Saw test failure from 2.3 nightly,20.0,57.1,36.4,-37.1,-16.4
+gitbugs,"Port the following to SeaMonkey:
+* Bug 822068 - The content loses focus after calling gBrowser.moveTabBackward/moveTabForward",Port |Bug 822068 - The content loses focus after calling gBrowser.moveTabBackward/moveTabForward| to SeaMonkey,The content loses focus after calling gBrowser.moveTabBackward,gBrowser.moveTabBackward/gBrowser.moveTabForward does not work on Windows,The content loses focus after calling gBrowser.moveTabBackward/moveTabForward,72.7,26.1,78.3,46.6,-5.599999999999994
+gitbugs,SPARK-37308 disabled a test due to unknown flakiness. We should enable this back after investigation.,Reenable exception test in DDLParserSuite.create view -- basic,Enable flakiness test,SPARK-37308 disabled test due to unknown flakiness,SPARK-37308 disabled due to unknown flakiness,18.2,12.5,0.0,5.699999999999999,18.2
+gitbugs,"When using [spark operator|https://github.com/GoogleCloudPlatform/spark-on-k8s-operator], if dependencies are hosted on a private repository with authentication needed (like S3 or OCI) the spark operator submitting the job need to have all the secrets to access all dependencies. If not the spark-submit fails.
+
+On a multi tenant kubernetes cluster where the spark operator and spark jobs execution are on seperate namespaces, it involves duplicating all secrets or it won't work.
+
+It seems that  ...",spark-submit - issue when resolving dependencies hosted on a private repository in kubernetes cluster mode,SparkSubmit.resolveGlobPath does not work on private repositories,resolveGlobPath task skipped when running on a Kubernetes Cluster,[spark operator|https://github.com/GoogleCloudPlatform/spark-on-k8s-operator] if dependencies are hosted on private repository with authentication needed,17.4,41.7,34.3,-24.300000000000004,-16.9
+gitbugs,"How to reproduce:
+bin/spark-sql --master yarn --conf spark.driver.host=10.211.174.53
+{code:sql}
+set spark.sql.adaptive.enabled=true;
+select a from (select id as a, id as b, id as z from range(100000000)) t1
+join (select id as c, id as d from range(200000000)) t2 on t1.a = t2.c
+join (select id as e, id as f from range(300000000)) t3 on t2.d = t3.e
+where z % 10 < 0
+group by 1;
+{code}",Cancel running stage if the result is empty relation,Group by not working with adaptive mode,Spark SQL Adaptive is disabled,spark.sql.adaptive.enabled = false,0.0,14.3,0.0,-14.3,0.0
+gitbugs,"- VSCode Version: 1.2.1
+- OS Version: Windows 10.0.10586
+
+Steps to Reproduce:
+1. Be editing python document
+2. Be typing in a comment
+3. Type a contraction such as isn't
+4. Notice that the editor creates a closing apostrophe that is inappropriate in this context.",Creating a closing quote when typing a contraction in a comment,Editor creates closing apostrophe when typing a contraction,The editor creates a closing apostrophe that is inappropriate,Editor creates closing apostrophe in a comment,52.6,20.0,44.4,32.6,8.200000000000003

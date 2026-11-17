@@ -1,0 +1,1 @@
+With a 20 percent discount on a cart worth 100.00 the total shows 85.60 but I expected 85.60 only when tax is 7 percent. When I change the tax rate to 0 the total still includes tax. It looks like the default tax rate is used even when I pass a different one.

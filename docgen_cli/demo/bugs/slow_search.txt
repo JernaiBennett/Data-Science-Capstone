@@ -1,0 +1,1 @@
+When I search for a symbol in a repository with about 50,000 files the UI freezes and the search takes over 30 seconds. Smaller repositories are fine. CPU usage is stuck at 100 percent on one core while the search runs. Disabling the "search in node_modules" option does not help. This started after upgrading from 2.3 to 2.4.

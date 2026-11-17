@@ -1,0 +1,9 @@
+Steps to reproduce:
+1. Open the editor and create a new document.
+2. Choose File > Save As and type a name containing an emoji, for example "notes 😀.txt".
+3. Click Save.
+
+Expected: the file is saved.
+Actual: the window closes immediately and no file is written. The log shows UnicodeEncodeError: 'charmap' codec can't encode character.
+
+Environment: Windows 11, version 2.4.1, default system locale.

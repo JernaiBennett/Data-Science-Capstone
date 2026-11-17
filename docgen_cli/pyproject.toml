@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "docgen-cli"
+version = "0.1.0"
+description = "Draft docstrings and bug report summaries with a fine-tuned CodeT5+ model"
+requires-python = ">=3.9"
+dependencies = [
+    "torch",
+    "transformers>=4.40",
+    "sentencepiece",
+    "huggingface_hub",
+]
+
+[project.optional-dependencies]
+lora = ["peft"]
+test = ["pytest"]
+
+[project.scripts]
+docgen = "docgen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

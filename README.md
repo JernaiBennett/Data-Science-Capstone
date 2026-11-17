@@ -3,7 +3,11 @@
 **Author:** Jernai Bennett, MS in Data Science and AI, Florida International University
 **Advisor:** Dr. Olaoluwa Adigun
 
-This project fine-tunes **CodeT5+ 220M**, a code-specific language model, to draft docstrings for source code and summaries for bug reports. The long-term goal is a command-line tool that automates both tasks for software engineers. The repository compares **full fine-tuning** against **LoRA** (low-rank adaptation) on the same data, metrics, and GPU.
+This project fine-tunes **CodeT5+ 220M**, a code-specific language model, to draft docstrings for source code and summaries for bug reports. The repository compares **full fine-tuning**, **LoRA** (low-rank adaptation), and a **CodeT5-small** baseline on the same data, metrics, and GPU, and includes `docgen`, a command-line tool built on the best model (see [docgen_cli/](docgen_cli/)).
+
+## Command-line tool
+
+`docgen` proposes docstrings for undocumented Python functions (as a diff you review), summarizes snippets in six languages, and writes titles for bug reports. Install and usage are in [docgen_cli/README.md](docgen_cli/README.md). Model weights are not stored in the repository.
 
 ## Results
 
@@ -13,11 +17,12 @@ Test set: 19,988 examples (six programming languages plus GitBugs). Higher is be
 |---|---|---|---|---|---|---|
 | CodeT5+ 220M, full fine-tune | 16.40 | 39.89 | 37.54 | 222.9M (100%) | 12.7 GB | about 890 MB |
 | CodeT5+ 220M, LoRA | 13.32 | 37.79 | 35.29 | 0.88M (0.4%) | 7.9 GB | 3.6 MB adapter |
-| CodeT5-small (baseline) | pending | pending | pending | n/a | n/a | n/a |
+| CodeT5-small (baseline) | 13.44 | 37.07 | 34.71 | 60.5M (100%) | 4.5 GB | 242 MB |
 
 - Full fine-tuning scores highest on every metric and in every language group; LoRA is within about 2 ROUGE-L points while using 37.5% less peak GPU memory.
 - Training time per epoch is nearly the same (27.7 vs 29.0 minutes). Once merged into the base model, LoRA inference speed matches the full fine-tune.
-- Per-language scores, first-sentence scores, and the efficiency table are in `results/comparison/`.
+- LoRA and CodeT5-small differ by less than one point on each metric. With one training run each, this does not show that either is better.
+- Per-language scores, first-sentence scores, and the efficiency table are in `results/comparisons/`.
 
 ## Key finding: a data leak, found and fixed
 
@@ -31,11 +36,13 @@ notebooks/
   02_fix_python_docstring_leak.ipynb Strip Python docstrings from inputs, create v2 splits
   03_full_finetune.ipynb             CodeT5+ 220M full fine-tune, evaluation, results export
   04_lora_finetune.ipynb             CodeT5+ 220M LoRA, evaluation, comparison with full fine-tune
+  05_codet5_small_baseline.ipynb     CodeT5-small on the fixed splits, matched evaluation, three-model comparison
 results/
   full_finetune_v1_leaked/           First run (leaked data), kept for the record
   full_finetune_v2/                  Full fine-tune on the fixed data
   lora_v2/                           LoRA on the fixed data
-  comparison/                        Side-by-side metrics and efficiency tables
+  comparisons/                       Side-by-side metrics and efficiency tables
+docgen_cli/                          The `docgen` command-line tool, tests, demo project, and model card
 docs/                                Presentation and loss-curve figures
 data/                                Data description (datasets are not stored in the repository)
 ```
@@ -49,6 +56,7 @@ Prediction files are gzipped (`.csv.gz`); read them with `pandas.read_csv("file.
 3. Run `02_fix_python_docstring_leak.ipynb` to create `splits_v2`.
 4. Run `03_full_finetune.ipynb` on an A100 runtime (about 2 hours; checkpoints resume automatically).
 5. Run `04_lora_finetune.ipynb` on the same GPU type (about 1.5 hours of training plus generation).
+6. Run `05_codet5_small_baseline.ipynb` (about 40 minutes of training plus generation). It also rescores the full fine-tune and LoRA predictions with the same code and prints the three-model tables.
 
 Run each notebook from top to bottom in a single session. See `data/README.md` for the files each step creates.
 
@@ -69,8 +77,9 @@ print({m.__name__: m.__version__ for m in (torch, transformers, datasets, peft, 
 
 - One training run per model (a single seed); LoRA settings are not tuned yet.
 - Reference docstrings include parameter and returns sections, which lowers n-gram scores for every model.
-- The Spring 2026 CodeT5-small baseline was trained on Python only and likely on leaked data; it will be retrained on the fixed splits.
-- Next: retrain CodeT5-small, error analysis across all three models, an optional LoRA sweep, and the command-line demo.
+- The Spring 2026 CodeT5-small baseline was trained on Python only and likely on leaked data. It was replaced by a retrain on the fixed splits (`05_codet5_small_baseline.ipynb`).
+- The CLI is a prototype. Parameter and returns text in generated docstrings is often generic or wrong, so it keeps only the summary line by default. Bug titles and non-Python snippet summaries are weak. See `docgen_cli/docs/MODEL_CARD.md`.
+- Next: error analysis across all three models, confidence intervals, and an optional LoRA sweep.
 
 ## References
 
